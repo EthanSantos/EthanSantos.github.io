@@ -1,6 +1,7 @@
 import React from 'react'
+import Pill from './Pill'
 
-const Card = ({ imageSrc, title, description }) => {
+const Card = ({ imageSrc, title, skills, description }) => {
     return (
         <div className="relative flex flex-col md:flex-row w-full max-w-[80rem] rounded-xl bg-white bg-clip-border text-gray-700 shadow-xl">
             <div className="relative m-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700 aspect-w-20 aspect-h-10 md:aspect-w-40 md:aspect-h-10 md:w-1/2">
@@ -14,10 +15,14 @@ const Card = ({ imageSrc, title, description }) => {
                 <h6 className="mb-2 md:mb-4 block text-base md:text-lg font-semibold uppercase leading-relaxed tracking-normal text-black antialiased text-left">
                     {title}
                 </h6>
-                <p className="mb-2 block text-sm md:text-base font-normal leading-relaxed text-gray-500 antialiased text-left">
-                    {description}
+                <p className="mb-4 block text-sm md:text-base font-normal leading-relaxed text-gray-500 antialiased text-left" dangerouslySetInnerHTML={{ __html: description }}>
                 </p>
-                <div className="absolute bottom-0 right-0 mb-4 mr-4">
+                <div className="flex flex-wrap mb-4">
+                    {skills.map((item, index) => (
+                        <Pill key={index} text={item.text} />
+                    ))}
+                </div>
+                <div className="absolute bottom-0 right-0 mb-4 mr-6 md:mr-4">
                     <button
                         className="flex select-none items-center gap-2 rounded-lg text-center align-middle font-sans text-xs font-bold uppercase text-black transition-all"
                         type="button"
@@ -42,7 +47,7 @@ const Card = ({ imageSrc, title, description }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Card
