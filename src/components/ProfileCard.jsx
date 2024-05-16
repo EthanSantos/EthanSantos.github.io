@@ -3,7 +3,7 @@ import profilePic from '../assets/ProfilePic.png'
 
 const ProfileCard = () => {
     return (
-        <div className="max-w-md mx-auto bg-white drop-shadow-[0_0px_10px_rgba(0,0,0,0.25)] rounded-lg overflow-hidden mt-8 flex">
+        <div className="max-w-lg mx-auto bg-white drop-shadow-[0_0px_10px_rgba(0,0,0,0.25)] rounded-lg overflow-hidden mt-8 flex">
             <div className="px-4 py-8 flex-1">
                 <div className="text-left">
                     <h1 className="text-2xl font-bold text-gray-800 mb-2">Ethan Santos</h1>
