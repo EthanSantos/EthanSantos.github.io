@@ -6,7 +6,7 @@ const About = () => {
 
     const information = {
         About: "I'm a third-year Computer Science major at University of California, Irvine with a deep passion for web development and game development. My programming journey began in late 2016, and since then, I've grown my skills and expertise across various technologies.",
-        Awards: "Best Startup at BearHacks"
+        Awards: "Best Startup at BearHacks (UC Riverside), Best User Experience Award at Roblox x USC Game Jam, Dean’s Honors List, Mount San Antonio College Honors Program" 
     }
     return (
         <div className="text-gray-900">
@@ -40,7 +40,7 @@ const About = () => {
                         <p className="text-base text-gray-600">Aug. 2021 – June 2023</p>
                     </div>
                     <h1 className="text-2xl font-bold mb-4">Awards</h1>
-                    <p className="mb-2 text-base text-gray-600">{information.Awards}</p>
+                    <p className="mb-4 text-base text-gray-600">{information.Awards}</p>
                     <h1 className="text-2xl font-bold mb-4">Skills</h1>
                     <Pill text={"C++"} />
                     <Pill text={"Java"} />
