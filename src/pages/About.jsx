@@ -1,12 +1,13 @@
 import React from 'react'
 import Pill from '../components/Pill'
-
+import uci from '../assets/uci.png'
+import mtsac from '../assets/mtsac.png'
 
 const About = () => {
 
     const information = {
-        About: "I'm a third-year Computer Science major at University of California, Irvine with a deep passion for web development and game development. My programming journey began in late 2016, and since then, I've grown my skills and expertise across various technologies.",
-        Awards: "Best Startup at BearHacks (UC Riverside), Best User Experience Award at Roblox x USC Game Jam, Dean’s Honors List, Mount San Antonio College Honors Program" 
+        About: "I'm a third-year Computer Science major at University of California, Irvine with a deep passion for web development and game development. My programming journey began in late 2016, and since then, I've grown my skills and expertise across various technologies. In my free time, I love exercising daily, either going to the gym, playing basketball or hiking with my friends. I am also a car enthusiast, amateur chess player, and avid book reader.",
+        Awards: "Best Startup at BearHacks (UC Riverside), Best User Experience Award at Roblox x USC Game Jam, Dean’s Honors List, Mount San Antonio College Honors Program"
     }
     return (
         <div className="text-gray-900">
@@ -23,26 +24,45 @@ const About = () => {
                         <p className="mb-8 text-base text-gray-600">I also have a lot of experience in web development, participating in multiple hackathons, where I currently have 3 wins under my belt. These experiences have sharpened my skills and fostered my creativity in building innovative projects.</p>
                     </div>
                     <h1 className="text-2xl font-bold mb-4">Education</h1>
-                    <div className="flex justify-between">
-                        <div>
-                            <h2 className="text-lg font-semibold">University of California, Irvine</h2>
-                            <p className="text-base text-gray-600">Bachelor of Science in Computer Science</p>
-                            <p className="mb-4 text-base text-gray-600">GPA: 3.9 / 4.0</p>
+
+                    <div className="flex items-start mb-4">
+                        <img src={uci} alt="UCI Icon" className="w-12 h-12 mr-4" />
+                        <div className="flex-1">
+                            <div className="flex justify-between items-baseline">
+                                <h2 className="text-lg font-semibold">University of California, Irvine</h2>
+                                <p className="text-base">Sep. 2023 – June 2025</p>
+                            </div>
+                            <div className="flex justify-between items-baseline">
+                                <p className="text-base text-gray-600" >Bachelor of Science in Computer Science</p>
+                                <p className="text-sm">Irvine, CA</p>
+                            </div>
+                            <p className="text-base text-gray-600">GPA: 3.9 / 4.0</p>
                         </div>
-                        <p className="text-base text-gray-600">Sep. 2023 – June 2025</p>
                     </div>
-                    <div className="flex justify-between">
-                        <div>
-                            <h2 className="text-lg font-semibold">Mount San Antonio College</h2>
-                            <p className="text-base text-gray-600">Computer Science Transfer</p>
-                            <p className="mb-4 text-base text-gray-600">GPA: 3.94 / 4.0</p>
+
+
+                    <div className="flex items-start mb-4">
+                        <img src={mtsac} alt="MtSac Icon" className="w-12 h-12 mr-4" />
+                        <div className="flex-1">
+                            <div className="flex justify-between items-baseline">
+                                <h2 className="text-lg font-semibold">Mount San Antonio College</h2>
+                                <p className="text-base">Aug. 2021 – June 2023</p>
+                            </div>
+                            <div className="flex justify-between items-baseline">
+                                <p className="text-base text-gray-600" >Computer Science Transfer</p>
+                                <p className="text-sm">Walnut, CA</p>
+                            </div>
+                            <p className="text-base text-gray-600">GPA: 3.94 / 4.0</p>
                         </div>
-                        <p className="text-base text-gray-600">Aug. 2021 – June 2023</p>
                     </div>
+
                     <h1 className="text-2xl font-bold mb-4">Awards</h1>
                     <p className="mb-4 text-base text-gray-600">{information.Awards}</p>
                     <h1 className="text-2xl font-bold mb-4">Skills</h1>
+                    <Pill text={"React"} />
+                    <Pill text={"React Native"} />
                     <Pill text={"C++"} />
+                    <Pill text={"Swift"} />
                     <Pill text={"Java"} />
                     <Pill text={"JavaScript"} />
                     <Pill text={"TypeScript"} />
@@ -50,7 +70,6 @@ const About = () => {
                     <Pill text={"Lua"} />
                     <Pill text={"SQL"} />
                     <Pill text={"HTML/CSS"} />
-                    <Pill text={"React"} />
                     <Pill text={"Flask"} />
                     <Pill text={"TailwindCSS"} />
                     <Pill text={"MaterialUI"} />
