@@ -11,6 +11,23 @@ const Experience = () => {
                     <div className="flex justify-between items-start mb-8">
                         <div>
                             <div className="flex justify-between items-baseline w-full">
+                                <h2 className="text-lg font-semibold">Software Engineer Intern</h2>
+                                <p className="text-base">Jun. 2024 – Present</p>
+                            </div>
+                            <p className="mb-2 text-base">Blue Social</p>
+                            <p className="mb-4 text-base text-gray-500">
+                            At Blue Social, we participated in the Onchain Summer Coinbase Buildathon, where we integrated Web3 into our iOS app. I was tasked with integrating React Native into the existing app, which enabled cross-platform compatibility and allowed for the use of Thirdweb's React hooks. Using the Thirdweb SDK, I facilitated secure wallet connections and real-time blockchain transactions, developed features for earning BLUE tokens, and interacted with Socialize-to-Earn smart contracts. I also created components to display user transactions and balances and set up Thirdweb Smart Wallets via email for seamless login. These features allowed for gamified social interactions by implementing tokenized rewards - users earned tokens for participating in events, meeting new people, and contributing positively to the community, which could be used for exclusive benefits. This experience was a significant learning opportunity, enhancing my skills in blockchain applications, working with React Native, and bridging the gap between iOS native apps and React Native.
+                            </p>
+                            <Pill text={"React Native"} />
+                            <Pill text={"Swift"} />
+                            <Pill text={"Web3"} />
+                            <Pill text={"Thirdweb"} />
+                        </div>
+                    </div>
+
+                    <div className="flex justify-between items-start mb-8">
+                        <div>
+                            <div className="flex justify-between items-baseline w-full">
                                 <h2 className="text-lg font-semibold">Game Developer</h2>
                                 <p className="text-base">Mar. 2024 – Present</p>
                             </div>

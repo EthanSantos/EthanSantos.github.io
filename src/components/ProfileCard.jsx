@@ -62,9 +62,12 @@ const ProfileCard = () => {
                 </div>
             </div>
             <div className="px-6 py-4 flex-none">
-                <img src={profilePic} className="rounded-full hover:drop-shadow-xl h-40 w-40 mx-auto" alt="Profile Picture" />
+                <div className="rounded-full overflow-hidden">
+                    <img src={profilePic} className="h-40 w-40 mx-auto object-cover transition-transform duration-300 ease-in-out hover:scale-110" alt="Profile Picture" />
+                </div>
             </div>
         </div>
     );
 };
-export default ProfileCard
+
+export default ProfileCard;

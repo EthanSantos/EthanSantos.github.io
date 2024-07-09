@@ -9,33 +9,36 @@ const NavigationBar = () => {
 
     const handleClick = (tab) => {
         setCurrentPage(tab);
-
     };
 
+    const buttonClass = (page) => `
+        relative px-2 py-2 text-lg
+        transition-all duration-300 ease-in-out
+        ${currentPage === page ? 'font-bold' : 'font-normal hover:font-bold'}
+    `;
+
     return (
-        <div>
-            <div className="max-w-md mx-auto overflow-hidden mt-8 flex justify-center">
-                <button className="mx-4 relative text-lg font-semibold text-black group" onClick={() => handleClick('projects')}>
-                    Projects
-                    <span className="absolute left-0 bottom-0 w-full h-0.5 bg-transparent transition-all duration-300 group-hover:bg-black"></span>
-                </button>
-                <button className="mx-4 relative text-lg font-semibold text-black group" onClick={() => handleClick('experience')}>
-                    Experience
-                    <span className="absolute left-0 bottom-0 w-full h-0.5 bg-transparent transition-all duration-300 group-hover:bg-black"></span>
-                </button>
-                <button className="mx-4 relative text-lg font-semibold text-black group" onClick={() => handleClick('resume')}>
-                    Resume
-                    <span className="absolute left-0 bottom-0 w-full h-0.5 bg-transparent transition-all duration-300 group-hover:bg-black"></span>
-                </button>
-                <button className="mx-4 relative text-lg font-semibold text-black group" onClick={() => handleClick('about')}>
-                    About
-                    <span className="absolute left-0 bottom-0 w-full h-0.5 bg-transparent transition-all duration-300 group-hover:bg-black"></span>
-                </button>
+        <div className="w-full">
+            <nav className="max-w-md mx-auto mt-8 mb-4">
+                <ul className="flex justify-between items-center">
+                    {['Projects', 'Experience', 'Resume', 'About'].map((page) => (
+                        <li key={page}>
+                            <button 
+                                className={buttonClass(page.toLowerCase())}
+                                onClick={() => handleClick(page.toLowerCase())}
+                            >
+                                {page}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+            <div className="w-full">
+                {currentPage === 'projects' && <Projects />}
+                {currentPage === 'experience' && <Experience />}
+                {currentPage === 'resume' && <Resume />}
+                {currentPage === 'about' && <About />}
             </div>
-            {currentPage === 'projects' && <Projects />}
-            {currentPage === 'experience' && <Experience />}
-            {currentPage === 'resume' && <Resume />}
-            {currentPage === 'about' && <About />}
         </div>
     )
 }
