@@ -69,7 +69,8 @@ const About = () => {
                     <Pill text={"Python"} />
                     <Pill text={"Lua"} />
                     <Pill text={"SQL"} />
-                    <Pill text={"HTML/CSS"} />
+                    <Pill text={"HTML"} />
+                    <Pill text={"CSS"} />
                     <Pill text={"Flask"} />
                     <Pill text={"TailwindCSS"} />
                     <Pill text={"MaterialUI"} />
