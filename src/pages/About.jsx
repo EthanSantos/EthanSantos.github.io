@@ -73,6 +73,7 @@ const About = () => {
                     <Pill text={"CSS"} />
                     <Pill text={"Flask"} />
                     <Pill text={"TailwindCSS"} />
+                    <Pill text={"Bootstrap"} />
                     <Pill text={"MaterialUI"} />
                 </div>
             </div>
