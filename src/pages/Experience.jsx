@@ -72,7 +72,7 @@ const Experience = () => {
                                 <p className="text-sm">Remote</p>
                             </div>
                             <p className="mb-4 text-base text-gray-500">
-                                I developed AIMSTARS, a first-person shooter aim training game on Roblox, amassing over 8.9 million plays and 15,000 monthly active users, generating $30,000 in revenue. I coded the game in Lua, managing all aspects of production, including 3D modeling and UI design. I implemented bots with human-like movement using the Pathfinding service, developed a global leaderboard with ProfileService, and added a multiplayer mode that increased engagement by 40%. Additionally, I utilized MarketplaceService to create in-game products, significantly boosting the game's revenue.
+                                I developed AIMSTARS, a first-person shooter aim training game on Roblox, amassing over 9 million plays and 15,000 monthly active users, generating $30,000 in revenue. I coded the game in Lua, managing all aspects of production, including 3D modeling and UI design. I implemented bots with human-like movement using the Pathfinding service, developed a global leaderboard with ProfileService, and added a multiplayer mode that increased engagement by 40%. Additionally, I utilized MarketplaceService to create in-game products, significantly boosting the game's revenue.
                             </p>
                             <div className="flex flex-wrap">
                                 <Pill text={"Lua"} />
