@@ -49,7 +49,7 @@ const Experience = () => {
                                 <p className="text-sm">Remote</p>
                             </div>
                             <p className="mb-4 text-base text-gray-500">
-                                I developed a game builder that impacted thousands of students in classrooms through CodeCamp. I created a global server search system using TeleportService, which enabled players to join any user-created game instance seamlessly. Additionally, I integrated HTTP JSON protocols to send data about players’ games to a reserve server, enhancing data accuracy by 20%. I also established and configured a comprehensive database system to track likes, allowing players to rate user-created games effectively.
+                                I developed a game builder that has impacted thousands of students in classrooms through CodeCamp. I created a global server search system using TeleportService, which enabled players to join any user-created game instance seamlessly. Additionally, I integrated HTTP JSON protocols to send data about players’ games to a reserve server, enhancing data accuracy by 20%. I also established and configured a comprehensive database system to track likes, allowing players to rate user-created games effectively.
                             </p>
                             <div className="flex flex-wrap">
                                 <Pill text={"Lua"} />
