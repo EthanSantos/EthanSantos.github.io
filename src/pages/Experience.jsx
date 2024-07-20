@@ -119,7 +119,7 @@ const Experience = () => {
                                 <p className="text-sm">West Covina, CA</p>
                             </div>
                             <p className="mb-4 text-base text-gray-500">
-                                I efficiently managed product shipments by organizing inventory and preparing the sales floor to meet customer demand. I skillfully packaged items for shipment and coordinated with carriers to ensure timely delivery. I provided exemplary customer service by assisting customers with the loading of heavy products into their vehicles and offering attentive service on the sales floor. Additionally, I handled the fulfillment of online orders, focusing on prompt and accurate product retrieval to enhance customer satisfaction.
+                                I efficiently managed product shipments by organizing inventory and preparing the sales floor to meet customer demand. I quickly packaged items for shipment and coordinated with carriers to ensure timely delivery. I provided exemplary customer service by assisting customers with the loading of heavy products into their vehicles and offering attentive service on the sales floor. Additionally, I handled the fulfillment of online orders, focusing on prompt and accurate product retrieval to enhance customer satisfaction.
                             </p>
                             <div className="flex flex-wrap">
                                 <Pill text={"Team Collaboration"} />
