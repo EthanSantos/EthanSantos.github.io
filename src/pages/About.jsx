@@ -6,8 +6,8 @@ import mtsac from '../assets/mtsac.png'
 const About = () => {
 
     const information = {
-        About: "I'm an incoming fourth-year Computer Science major at University of California, Irvine with a deep passion for web development and game development. My programming journey began in late 2016, and since then, I've grown my skills and expertise across various technologies. In my free time, I love exercising daily, either going to the gym, playing basketball or hiking with my friends. I am also a car enthusiast, amateur chess player, and avid book reader.",
-        Awards: "Best Startup at BearHacks (UC Riverside), Best User Experience Award at Roblox x USC Game Jam, Dean’s Honors List, Mount San Antonio College Honors Program"
+        About: "I'm an incoming fourth-year Computer Science major at University of California, Irvine with a deep passion for web development and game development. My programming journey began in late 2016, and since then, I've grown my skills and expertise across various technologies. In my free time, I love exercising daily - whether that's going to the gym, playing basketball or hiking with my friends. I am also a car enthusiast, amateur chess player, and avid book reader.",
+        Awards: "Coinbase Onchain Summer Buildathon - GAMING with thirdweb, Best Startup at BearHacks (UC Riverside), Best User Experience Award at Roblox x USC Game Jam, Dean’s Honors List, Mount San Antonio College Honors Program"
     }
     return (
         <div className="text-gray-900">
@@ -21,7 +21,7 @@ const About = () => {
                     </div>
                     <div>
                         <h2 className="text-lg font-semibold">Web Development</h2>
-                        <p className="mb-8 text-base text-gray-600">I also have a lot of experience in web development, participating in multiple hackathons, where I currently have 3 wins under my belt. These experiences have sharpened my skills and fostered my creativity in building innovative projects.</p>
+                        <p className="mb-8 text-base text-gray-600">I also have a lot of experience in web development, participating in multiple hackathons, where I currently have 4 wins under my belt. These experiences have sharpened my skills and fostered my creativity in building innovative projects.</p>
                     </div>
                     <h1 className="text-2xl font-bold mb-4">Education</h1>
 
