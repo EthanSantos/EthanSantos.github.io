@@ -6,7 +6,7 @@ import mtsac from '../assets/mtsac.png'
 const About = () => {
 
     const information = {
-        About: "I'm an incoming fourth-year Computer Science major at University of California, Irvine with a deep passion for web development and game development. My programming journey began in late 2016, and since then, I've grown my skills and expertise across various technologies. In my free time, I love exercising daily - whether that's going to the gym, playing basketball or hiking with my friends. I am also a car enthusiast, amateur chess player, and avid book reader.",
+        About: "I'm an incoming fourth-year Computer Science major at University of California, Irvine with a deep passion for web development and game development. My programming journey began in late 2016, and since then, I have grown my skills and expertise across various technologies. In my free time, I love exercising daily - whether that's going to the gym, playing basketball or hiking with my friends. I am also a car enthusiast, amateur chess player, and avid book reader.",
         Awards: "Coinbase Onchain Summer Buildathon - GAMING with thirdweb, Best Startup at BearHacks (UC Riverside), Best User Experience Award at Roblox x USC Game Jam, Dean’s Honors List, Mount San Antonio College Honors Program"
     }
     return (
