@@ -4,6 +4,7 @@ import bluesocial from '../assets/bluesocial.png'
 import mtsac from '../assets/mtsac.png'
 import buzzy from '../assets/buzzy.png'
 import bestbuy from '../assets/bestbuy.png'
+import fusion from '../assets/fusion.png'
 
 const Experience = () => {
     return (
@@ -30,8 +31,32 @@ const Experience = () => {
                             <div className="flex flex-wrap">
                                 <Pill text={"React Native"} />
                                 <Pill text={"Swift"} />
-                                <Pill text={"Web3"} />
                                 <Pill text={"Thirdweb"} />
+                                <Pill text={"Git"} />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* FUSION Experience */}
+                    <div className="flex items-start mb-8">
+                        <img src={fusion} alt="Fusion Icon" className="w-12 h-12 mr-4" />
+                        <div className="flex-1">
+                            <div className="flex justify-between items-baseline">
+                                <h2 className="text-lg font-semibold">Software Developer</h2>
+                                <p className="text-base">Apr. 2024 – Present</p>
+                            </div>
+                            <div className="flex justify-between items-baseline">
+                                <p className="mb-2 text-base">FUSION at UCI</p>
+                                <p className="text-sm">Irvine, CA</p>
+                            </div>
+                            <p className="mb-4 text-base text-gray-500">
+                            I developed FUSION's club website using React, facilitating event coordination and communication for over 100 members. Collaborating with five designers, I implemented high-fidelity designs using Tailwind and DaisyUI, ensuring consistency across the site. Additionally, I integrated reusable components and custom hooks in React to streamline development and enhance code maintainability.
+                            </p>
+                            <div className="flex flex-wrap">
+                                <Pill text={"React"} />
+                                <Pill text={"TypeScript"} />
+                                <Pill text={"DaisyUI"} />
+                                <Pill text={"Git"} />
                             </div>
                         </div>
                     </div>
