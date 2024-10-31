@@ -21,7 +21,7 @@ const NavigationBar = () => {
         <div className="w-full">
             <nav className="max-w-md mx-auto mt-8 mb-4">
                 <ul className="flex justify-between items-center">
-                    {['Projects', 'Experience', 'Resume', 'About'].map((page) => (
+                    {['About', 'Projects', 'Experience', 'Resume'].map((page) => (
                         <li key={page}>
                             <button 
                                 className={buttonClass(page.toLowerCase())}
@@ -34,10 +34,10 @@ const NavigationBar = () => {
                 </ul>
             </nav>
             <div className="w-full">
+                {currentPage === 'about' && <About />}
                 {currentPage === 'projects' && <Projects />}
                 {currentPage === 'experience' && <Experience />}
                 {currentPage === 'resume' && <Resume />}
-                {currentPage === 'about' && <About />}
             </div>
         </div>
     )
