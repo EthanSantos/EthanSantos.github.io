@@ -7,7 +7,13 @@ const About = () => {
 
     const information = {
         About: "I'm a Computer Science major at University of California, Irvine with a deep passion for web development and game development. My programming journey began in late 2016, and since then, I have grown my skills and expertise across various technologies. In my free time, I love exercising daily - whether that's going to the gym, playing basketball or hiking with my friends. I am also a car enthusiast, amateur chess player, and avid book reader.",
-        Awards: "Coinbase Onchain Summer Buildathon - GAMING with thirdweb, Best Startup at BearHacks (UC Riverside), Best User Experience Award at Roblox x USC Game Jam, Dean’s Honors List, Mount San Antonio College Honors Program"
+        Awards: [
+            "1st place - Coinbase Onchain Summer Buildathon ($10,000 prize), 2024",
+            "1st place - UCR BearHacks (Best Startup), 2024",
+            "1st place - Best User Experience Award at Roblox x USC Game Jam ($1000 prize), 2024",
+            "Dean’s Honors List",
+            "Mount San Antonio College Honors Program"
+        ]
     }
     return (
         <div className="text-gray-900">
@@ -57,7 +63,13 @@ const About = () => {
                     </div>
 
                     <h1 className="text-2xl font-bold mb-4">Awards</h1>
-                    <p className="mb-4 text-base text-gray-600">{information.Awards}</p>
+
+                    <div className="mb-4 text-base text-gray-600 space-y-2">
+                        {information.Awards.map((award, index) => (
+                            <p key={index}>🥇 {award}</p>
+                        ))}
+                    </div>
+
                     <h1 className="text-2xl font-bold mb-4">Skills</h1>
                     <Pill text={"React"} />
                     <Pill text={"React Native"} />
@@ -72,6 +84,8 @@ const About = () => {
                     <Pill text={"HTML"} />
                     <Pill text={"CSS"} />
                     <Pill text={"Flask"} />
+                    <Pill text={"AWS"} />
+                    <Pill text={"Docker"} />
                     <Pill text={"TailwindCSS"} />
                     <Pill text={"Bootstrap"} />
                     <Pill text={"MaterialUI"} />
