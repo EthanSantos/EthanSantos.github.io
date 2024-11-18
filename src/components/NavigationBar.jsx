@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import About from '../pages/About'
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import About from '../pages/About';
 import Projects from '../pages/Projects';
 import Resume from '../pages/Resume';
 import Experience from '../pages/Experience';
@@ -19,28 +20,46 @@ const NavigationBar = () => {
 
     return (
         <div className="w-full">
-            <nav className="max-w-md mx-auto mt-8 mb-4">
+            <motion.nav 
+                className="max-w-md mx-auto mt-8 mb-4"
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+            >
                 <ul className="flex justify-between items-center">
-                    {['About', 'Projects', 'Experience', 'Resume'].map((page) => (
-                        <li key={page}>
-                            <button 
+                    {['About', 'Projects', 'Experience', 'Resume'].map((page, index) => (
+                        <motion.li 
+                            key={page}
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <motion.button 
                                 className={buttonClass(page.toLowerCase())}
                                 onClick={() => handleClick(page.toLowerCase())}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: index * 0.2, duration: 0.5 }}
+                                whileTap={{ scale: 0.9 }}
                             >
                                 {page}
-                            </button>
-                        </li>
+                            </motion.button>
+                        </motion.li>
                     ))}
                 </ul>
-            </nav>
-            <div className="w-full">
+            </motion.nav>
+            <motion.div 
+                className="w-full"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+            >
                 {currentPage === 'about' && <About />}
                 {currentPage === 'projects' && <Projects />}
                 {currentPage === 'experience' && <Experience />}
                 {currentPage === 'resume' && <Resume />}
-            </div>
+            </motion.div>
         </div>
-    )
-}
+    );
+};
 
-export default NavigationBar
+export default NavigationBar;
