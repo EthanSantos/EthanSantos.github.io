@@ -27,7 +27,7 @@ const NavigationBar = () => {
                 transition={{ duration: 0.6, ease: "easeInOut" }}
             >
                 <ul className="flex justify-between items-center">
-                    {['About', 'Projects', 'Experience', 'Resume'].map((page, index) => (
+                    {['about', 'projects', 'experience', 'resume'].map((page, index) => (
                         <motion.li 
                             key={page}
                             whileHover={{ scale: 1.1 }}

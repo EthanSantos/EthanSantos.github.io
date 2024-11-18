@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Pill from './Pill';
 
-const Card = ({ imageSrc, title, skills, description }) => {
+const Card = ({ imageSrc, title, skills, description, isVideo }) => {
     return (
         <motion.div
             className="relative flex flex-col md:flex-row w-full max-w-[80rem] rounded-xl bg-white bg-clip-border text-gray-700 shadow-xl"
@@ -16,11 +16,22 @@ const Card = ({ imageSrc, title, skills, description }) => {
                 animate={{ x: 0 }}
                 transition={{ delay: 0.3 }}
             >
-                <img
-                    src={imageSrc}
-                    alt="image"
-                    className="h-full w-full object-cover"
-                />
+                {isVideo ? (
+                    <iframe
+                        src={imageSrc}
+                        title={title}
+                        className="h-full w-full object-cover"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                ) : (
+                    <img
+                        src={imageSrc}
+                        alt="image"
+                        className="h-full w-full object-cover"
+                    />
+                )}
             </motion.div>
             <div className="p-4 md:p-6 flex flex-col justify-start w-full md:w-1/2 relative">
                 <motion.h6
