@@ -9,6 +9,7 @@ const ProfileCard = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
+            whileHover={{ y: -10 }}
         >
             <div className="px-4 py-8 flex-1">
                 <div className="text-left">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Pill from '../components/Pill';
 import bluesocial from '../assets/bluesocial.png'
 import mtsac from '../assets/mtsac.png'
@@ -11,10 +12,22 @@ const Experience = () => {
         <div className="text-gray-900">
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-2xl mx-auto">
-                    <h1 className="text-2xl font-bold mb-4">Work Experience</h1>
+                    <motion.h1 
+                        className="text-2xl font-bold mb-4"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        Work Experience
+                    </motion.h1>
 
                     {/* Blue Social Experience */}
-                    <div className="flex items-start mb-8">
+                    <motion.div 
+                        className="flex items-start mb-8"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                    >
                         <img src={bluesocial} alt="Blue Social Icon" className="w-12 h-12 mr-4" />
                         <div className="flex-1">
                             <div className="flex justify-between items-baseline">
@@ -35,10 +48,15 @@ const Experience = () => {
                                 <Pill text={"Git"} />
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* FUSION Experience */}
-                    <div className="flex items-start mb-8">
+                    <motion.div 
+                        className="flex items-start mb-8"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                    >
                         <img src={fusion} alt="Fusion Icon" className="w-12 h-12 mr-4" />
                         <div className="flex-1">
                             <div className="flex justify-between items-baseline">
@@ -59,10 +77,15 @@ const Experience = () => {
                                 <Pill text={"Git"} />
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Buzzy.gg Experience */}
-                    <div className="flex items-start mb-8">
+                    <motion.div 
+                        className="flex items-start mb-8"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                    >
                         <img src={buzzy} alt="Buzzy.gg Icon" className="w-12 h-12 mr-4" />
                         <div className="flex-1">
                             <div className="flex justify-between items-baseline">
@@ -82,10 +105,15 @@ const Experience = () => {
                                 <Pill text={"Git"} />
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* AIMSTARS Experience */}
-                    <div className="flex items-start mb-8">
+                    <motion.div 
+                        className="flex items-start mb-8"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                    >
                         <img src="https://tr.rbxcdn.com/ca184ff37987fb414f2c8ad4d0bbd0a8/150/150/Image/Webp" alt="AIMSTARS Icon" className="w-12 h-12 mr-4" />
                         <div className="flex-1">
                             <div className="flex justify-between items-baseline">
@@ -105,10 +133,15 @@ const Experience = () => {
                                 <Pill text={"Git"} />
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Math Tutor Experience */}
-                    <div className="flex items-start mb-8">
+                    <motion.div 
+                        className="flex items-start mb-8"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                    >
                         <img src={mtsac} alt="Math Tutor Icon" className="w-12 h-12 mr-4" />
                         <div className="flex-1">
                             <div className="flex justify-between items-baseline">
@@ -129,10 +162,15 @@ const Experience = () => {
                                 <Pill text={"Teaching"} />
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Best Buy Experience */}
-                    <div className="flex items-start mb-8">
+                    <motion.div 
+                        className="flex items-start mb-8"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.6 }}
+                    >
                         <img src={bestbuy} alt="Best Buy Icon" className="w-12 h-12 mr-4" />
                         <div className="flex-1">
                             <div className="flex justify-between items-baseline">
@@ -153,7 +191,7 @@ const Experience = () => {
                                 <Pill text={"Logistics and Shipping"} />
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>
