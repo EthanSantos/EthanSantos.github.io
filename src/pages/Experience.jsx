@@ -43,6 +43,7 @@ const Experience = () => {
                             </p>
                             <div className="flex flex-wrap">
                                 <Pill text={"React Native"} />
+                                <Pill text={"JavaScript"} />
                                 <Pill text={"Swift"} />
                                 <Pill text={"Thirdweb"} />
                                 <Pill text={"Git"} />
