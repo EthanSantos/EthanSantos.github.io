@@ -1,8 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import Pill from './Pill';
 
-const Card = ({ imageSrc, title, skills, description, isVideo }) => {
+const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
+    const navigate = useNavigate();
+
+    const handleLearnMore = () => {
+        if (link) {
+            navigate(link); // Navigate to the specified route
+        }
+    };
+
     return (
         <motion.div
             className="relative flex flex-col md:flex-row w-full max-w-[80rem] rounded-xl bg-white bg-clip-border text-gray-700 shadow-xl"
@@ -59,6 +68,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo }) => {
                     <button
                         className="flex select-none items-center gap-2 rounded-lg text-center align-middle font-sans text-xs font-bold uppercase text-black transition-all"
                         type="button"
+                        onClick={handleLearnMore}
                     >
                         Learn More
                         <svg

@@ -8,6 +8,8 @@ import Resume from './pages/Resume';
 import Experience from './pages/Experience';
 import NotFound from './pages/NotFound';
 
+import Aimstars from './pages/ProjectArticle/Aimstars';
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,8 @@ function App() {
               <Route path="/resume" element={<Resume />} />
               <Route path="/experience" element={<Experience />} />
               <Route path="*" element={<NotFound />} />
+
+              <Route path="aimstars" element={<Aimstars />} />
             </Routes>
           </main>
         </div>
