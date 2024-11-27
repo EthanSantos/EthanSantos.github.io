@@ -25,7 +25,7 @@ const BlogArticle = ({ title, author, date, content }) => {
 
     return (
         <motion.div
-            className="max-w-4xl mx-auto px-4 lg:px-0"
+            className="max-w-4xl mx-auto px-4 lg:px-0 mt-6"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
