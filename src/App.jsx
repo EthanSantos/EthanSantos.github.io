@@ -1,17 +1,35 @@
-import ProfileCard from './components/ProfileCard'
-import NavigationBar from './components/NavigationBar'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import ProfileCard from './components/ProfileCard';
+import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Resume from './pages/Resume';
+import Experience from './pages/Experience';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="flex-grow">
-        <ProfileCard />
-        <NavigationBar />
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <div className="flex-grow">
+          <ProfileCard />
+          <NavigationBar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Navigate to="/about" replace />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/experience" element={<Experience />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 
-export default App
+export default App;
