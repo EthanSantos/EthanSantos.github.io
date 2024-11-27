@@ -26,7 +26,8 @@ const NavigationBar = () => {
                         <motion.li 
                             key={label}
                             whileHover={{ scale: 1.1 }}
-                            transition={{ duration: 0.3 }}
+                            whileTap={{ scale: 1 }}
+                            transition={{ duration: 0.2 }}
                         >
                             <NavLink 
                                 to={path}

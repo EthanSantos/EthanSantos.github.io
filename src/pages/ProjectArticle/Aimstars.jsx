@@ -38,9 +38,27 @@ const Aimstars = () => {
                 value: "This is where I talk about how I made the game"
             },
             {
-                type: 'image',
-                src: Droplet,
-                alt: "Droplet Image"
+                type: 'code',
+                language: 'lua',
+                value: `Weapon = {}
+Weapon.__index = Weapon
+
+function Weapon:new(name, damage, ammo)
+    local self = setmetatable({}, Weapon)
+    self.name = name
+    self.damage = damage
+    self.ammo = ammo
+    return self
+end
+
+function Weapon:shoot()
+    if self.ammo > 0 then
+        self.ammo = self.ammo - 1
+        print(self.name .. " fired! Ammo left: " .. self.ammo)
+    else
+        print("Out of ammo!")
+    end
+end`
             },
             {
                 type: 'subheader',
@@ -63,6 +81,11 @@ const Aimstars = () => {
             {
                 type: 'subheader',
                 value: "Building a Thriving Community"
+            },
+            {
+                type: 'image',
+                src: Droplet,
+                alt: "Droplet Image"
             },
             {
                 type: 'text',

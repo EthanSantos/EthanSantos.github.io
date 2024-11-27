@@ -1,24 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 const BlogArticle = ({ title, author, date, content }) => {
     const navigate = useNavigate();
 
+    // Animation variants for staggered content
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                when: "beforeChildren",
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+    };
+
     return (
         <motion.div
             className="max-w-4xl mx-auto px-4 lg:px-0"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeInOut' }}
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
         >
             {/* Back Button */}
             <motion.button
                 onClick={() => navigate('/projects')}
                 className="mb-6 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-lg transition-all"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
             >
                 ← Back to Projects
             </motion.button>
@@ -26,9 +44,7 @@ const BlogArticle = ({ title, author, date, content }) => {
             {/* Title Section */}
             <motion.header
                 className="mb-8"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                variants={itemVariants}
             >
                 <h1 className="text-4xl font-bold text-gray-800">{title}</h1>
                 <div className="flex justify-between text-sm text-gray-500 mt-2">
@@ -40,53 +56,83 @@ const BlogArticle = ({ title, author, date, content }) => {
             {/* Content Section */}
             <motion.article
                 className="prose lg:prose-lg xl:prose-xl prose-img:rounded-lg prose-video:rounded-lg text-gray-700"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                variants={containerVariants}
             >
                 {content.map((block, index) => {
                     switch (block.type) {
                         case 'text':
-                            return <p key={index}>{block.value}</p>;
+                            return (
+                                <motion.p
+                                    key={index}
+                                    variants={itemVariants}
+                                >
+                                    {block.value}
+                                </motion.p>
+                            );
                         case 'subheader':
                             return (
-                                <h2 key={index} className="text-2xl font-semibold text-gray-800 mt-6">
+                                <motion.h2
+                                    key={index}
+                                    className="text-2xl font-semibold text-gray-800 mt-6"
+                                    variants={itemVariants}
+                                >
                                     {block.value}
-                                </h2>
+                                </motion.h2>
                             );
                         case 'image':
                             return (
-                                <motion.div
+                                <motion.figure
                                     key={index}
-                                    className="flex justify-center my-4"
-                                    initial={{ scale: 0.9, opacity: 0 }}
-                                    animate={{ scale: 1, opacity: 1 }}
-                                    transition={{ duration: 0.4, delay: 0.2 }}
+                                    className="flex flex-col items-center my-4"
+                                    variants={itemVariants}
                                 >
-                                    <img
+                                    <motion.img
                                         src={block.src}
                                         alt={block.alt || 'Blog image'}
                                         className="rounded-lg"
+                                        whileHover={{ scale: 1.05 }}
+                                        transition={{ duration: 0.3 }}
                                     />
-                                </motion.div>
+                                    {block.caption && (
+                                        <figcaption className="text-sm text-gray-500 mt-2">
+                                            {block.caption}
+                                        </figcaption>
+                                    )}
+                                </motion.figure>
                             );
                         case 'video':
                             return (
                                 <motion.div
                                     key={index}
                                     className="my-4"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 0.6 }}
+                                    variants={itemVariants}
                                 >
-                                    <iframe
+                                    <motion.iframe
                                         src={block.src}
                                         title={block.alt || 'Blog video'}
                                         className="w-full aspect-video rounded-lg"
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
-                                    ></iframe>
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.6 }}
+                                    ></motion.iframe>
+                                </motion.div>
+                            );
+                        case 'code':
+                            return (
+                                <motion.div
+                                    key={index}
+                                    className="my-4"
+                                    variants={itemVariants}
+                                >
+                                    <SyntaxHighlighter
+                                        language={block.language || 'javascript'}
+                                        style={block.style}
+                                    >
+                                        {block.value}
+                                    </SyntaxHighlighter>
                                 </motion.div>
                             );
                         default:

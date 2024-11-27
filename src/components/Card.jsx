@@ -14,10 +14,12 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
 
     return (
         <motion.div
-            className="relative flex flex-col md:flex-row w-full max-w-[80rem] rounded-xl bg-white bg-clip-border text-gray-700 shadow-xl"
+            className="relative flex flex-col md:flex-row w-full max-w-[80rem] rounded-xl bg-white bg-clip-border text-gray-700 shadow-xl cursor-pointer"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.02, boxShadow: '0px 10px 15px rgba(0, 0, 0, 0.1)' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            onClick={handleLearnMore}
         >
             <motion.div
                 className="relative m-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700 aspect-w-20 aspect-h-10 md:aspect-w-40 md:aspect-h-10 md:w-1/2"
@@ -37,7 +39,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
                 ) : (
                     <img
                         src={imageSrc}
-                        alt="image"
+                        alt={title}
                         className="h-full w-full object-cover"
                     />
                 )}
@@ -57,36 +59,38 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}
-                >
-                </motion.p>
+                ></motion.p>
                 <div className="flex flex-wrap mb-4">
                     {skills.map((item, index) => (
                         <Pill key={index} text={item.text} />
                     ))}
                 </div>
                 <div className="absolute bottom-0 right-0 mb-4 mr-6 md:mr-4">
-                    <button
-                        className="flex select-none items-center gap-2 rounded-lg text-center align-middle font-sans text-xs font-bold uppercase text-black transition-all"
+                    <motion.button
                         type="button"
                         onClick={handleLearnMore}
+                        className="flex select-none items-center gap-2 rounded-lg text-center align-middle font-sans text-xs font-bold uppercase text-black transition-transform"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ duration: 0.1 }}
                     >
                         Learn More
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
+                            className="h-4 w-4"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth="2"
                             stroke="currentColor"
                             aria-hidden="true"
-                            className="h-4 w-4"
                         >
                             <path
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                            ></path>
+                                d="M17.25 8.25L21 12l-3.75 3.75M21 12H3"
+                            />
                         </svg>
-                    </button>
+                    </motion.button>
                 </div>
             </div>
         </motion.div>
