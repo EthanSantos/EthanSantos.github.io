@@ -22,7 +22,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
             onClick={handleLearnMore}
         >
             <motion.div
-                className="relative m-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700 aspect-w-20 aspect-h-10 md:aspect-w-40 md:aspect-h-10 md:w-1/2"
+                className="relative m-0 overflow-hidden rounded-t-xl md:rounded-r-none md:rounded-l-xl bg-white bg-clip-border text-gray-700 aspect-w-16 aspect-h-9 md:aspect-w-40 md:aspect-h-10 w-full md:w-1/2"
                 initial={{ x: -50 }}
                 animate={{ x: 0 }}
                 transition={{ delay: 0.3 }}
@@ -65,7 +65,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
                         <Pill key={index} text={item.text} />
                     ))}
                 </div>
-                <div className="absolute bottom-0 right-0 mb-4 mr-6 md:mr-4">
+                <div className="mt-auto">
                     <motion.button
                         type="button"
                         onClick={handleLearnMore}
