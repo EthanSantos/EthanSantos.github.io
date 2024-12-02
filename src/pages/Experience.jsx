@@ -100,7 +100,7 @@ const Experience = () => {
                                 <img
                                     src={exp.logo}
                                     alt={exp.company}
-                                    className="w-full h-full rounded-full object-cover"
+                                    className="w-[90%] h-[90%] rounded-full object-cover"
                                 />
                             </div>
 
@@ -108,7 +108,7 @@ const Experience = () => {
                                 <img
                                     src={exp.logo}
                                     alt={exp.company}
-                                    className="w-full h-full rounded-full object-cover"
+                                    className="w-[90%] h-[90%] rounded-full object-cover"
                                 />
                             </div>
 
