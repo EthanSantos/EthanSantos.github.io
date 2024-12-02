@@ -6,6 +6,8 @@ import buzzy from '../assets/buzzy.png';
 import bestbuy from '../assets/bestbuy.png';
 import mtsac from '../assets/mtsac.png';
 import Pill from '../components/Pill';
+import Google from "../assets/Google.png";
+import Zotbins from "../assets/Zotbins.svg"
 
 const experiences = [
     {
@@ -18,6 +20,28 @@ const experiences = [
       `,
         logo: bluesocial,
         technologies: ["React Native", "JavaScript", "Swift", "Thirdweb", "Git"],
+    },
+    {
+        title: "Web & Mobile Developer",
+        company: "UCI ZotBins Research Team",
+        date: "Oct. 2024 – Present",
+        location: "Irvine, CA",
+        description: `
+        Just started this position, will update in the future.
+        `,
+        logo: Zotbins,
+        technologies: ["React Native", "JavaScript", "Firebase", "Git"],
+    },
+    {
+        title: "FGN Mentorship Program",
+        company: "Google",
+        date: "Aug. 2024 – Present",
+        location: "Riverside, CA",
+        description: `
+        Selected as one of 80 students out of 200+ applicants for the Filipino Googler Network (FGN) Kapwa Mentorship Program.
+        `,
+        logo: Google,
+        technologies: [],
     },
     {
         title: "Software Developer",
@@ -33,7 +57,7 @@ const experiences = [
     {
         title: "Game Developer",
         company: "Buzzy.gg",
-        date: "Mar. 2024 – Present",
+        date: "Mar. 2024 – Sep. 2024",
         location: "Remote",
         description: `
         I developed a game builder that has impacted thousands of students in classrooms through CodeCamp. I created a global server search system using TeleportService, which enabled players to join any user-created game instance seamlessly. Additionally, I integrated HTTP JSON protocols to send data about players’ games to a reserve server, enhancing data accuracy by 20%. I also established and configured a comprehensive database system to track likes, allowing players to rate user-created games effectively.
@@ -44,7 +68,7 @@ const experiences = [
     {
         title: "Technical Founder",
         company: "AIMSTARS",
-        date: "Jun. 2020 – Present",
+        date: "Jun. 2020 – Mar. 2024",
         location: "Remote",
         description: `
         I developed AIMSTARS, a first-person shooter aim training game on Roblox, amassing over 9 million plays and 15,000 monthly active users, generating $30,000 in revenue. I coded the game in Lua, managing all aspects of production, including 3D modeling and UI design. I implemented bots with human-like movement using the Pathfinding service, developed a global leaderboard with ProfileService, and added a multiplayer mode that increased engagement by 40%. Additionally, I utilized MarketplaceService to create in-game products, significantly boosting the game's revenue.
@@ -94,7 +118,7 @@ const Experience = () => {
                             className="mb-8 flex justify-between items-center w-full md:flex-row flex-col md:relative"
                         >
                             <div
-                                className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-16 h-16 rounded-full bg-white border-2 border-gray-300 z-10"
+                                className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-20 h-20 rounded-full bg-white border-2 border-gray-300 z-10"
                                 style={{ top: '50%', transform: 'translate(-50%, -50%)' }}
                             >
                                 <img
