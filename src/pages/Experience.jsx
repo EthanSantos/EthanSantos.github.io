@@ -81,14 +81,11 @@ const experiences = [
     },
 ];
 
-
-
 const Experience = () => {
     return (
         <div className="min-h-screen bg-white text-black py-12">
             <div className="container mx-auto px-4">
                 <div className="relative">
-                    {/* Vertical timeline line */}
                     <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300"></div>
 
                     {experiences.map((exp, index) => (
@@ -96,7 +93,6 @@ const Experience = () => {
                             key={index}
                             className="mb-8 flex justify-between items-center w-full md:flex-row flex-col md:relative"
                         >
-                            {/* Logo for desktop (absolutely positioned) */}
                             <div
                                 className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-16 h-16 rounded-full bg-white border-2 border-gray-300 z-10"
                                 style={{ top: '50%', transform: 'translate(-50%, -50%)' }}
@@ -108,7 +104,6 @@ const Experience = () => {
                                 />
                             </div>
 
-                            {/* Logo for mobile (inline with flow) */}
                             <div className="md:hidden flex items-center justify-center w-16 h-16 rounded-full bg-white border-2 border-gray-300 mx-auto">
                                 <img
                                     src={exp.logo}
@@ -119,7 +114,6 @@ const Experience = () => {
 
                             {index % 2 === 0 ? (
                                 <>
-                                    {/* Left side card */}
                                     <div className="md:w-5/12 flex justify-end md:pr-2 relative">
                                         <motion.div
                                             className="bg-gray-100 p-4 rounded-lg shadow-lg border border-gray-300 w-full mt-4 md:mt-0 md:relative"
@@ -141,21 +135,17 @@ const Experience = () => {
                                             </div>
                                         </motion.div>
 
-                                        {/* Arrow pointing to the center */}
                                         <div className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2">
                                             <div className="w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-8 border-l-gray-300"></div>
                                         </div>
                                     </div>
 
-                                    {/* Empty right side */}
                                     <div className="hidden md:block w-5/12"></div>
                                 </>
                             ) : (
                                 <>
-                                    {/* Empty left side */}
                                     <div className="hidden md:block w-5/12"></div>
 
-                                    {/* Right side card */}
                                     <div className="md:w-5/12 flex justify-start md:pl-2 relative">
                                         <motion.div
                                             className="bg-gray-100 p-4 rounded-lg shadow-lg border border-gray-300 w-full mt-4 md:mt-0 md:relative"
@@ -177,7 +167,6 @@ const Experience = () => {
                                             </div>
                                         </motion.div>
 
-                                        {/* Arrow pointing to the center */}
                                         <div className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2">
                                             <div className="w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-gray-300"></div>
                                         </div>
