@@ -40,23 +40,18 @@ const Aimstars = () => {
             {
                 type: 'code',
                 language: 'lua',
-                value: `Weapon = {}
-Weapon.__index = Weapon
-
-function Weapon:new(name, damage, ammo)
-    local self = setmetatable({}, Weapon)
-    self.name = name
-    self.damage = damage
-    self.ammo = ammo
-    return self
-end
-
-function Weapon:shoot()
-    if self.ammo > 0 then
-        self.ammo = self.ammo - 1
-        print(self.name .. " fired! Ammo left: " .. self.ammo)
+                value: `local function saveData(Player)
+    local Data = {}
+    for _, stat in pairs(Player.Stats:GetChildren()) do
+        Data[stat.Name] = stat.Value
+    end
+    local s, e = pcall(function()
+        DataStore:SetAsync('UserId: ' .. Player.UserId, Data)
+    end)
+    if s then
+        print(Player.Name.."'s data has been successfuly saved!")
     else
-        print("Out of ammo!")
+        warn("Something went wrong while saving " ..Player.Name.." 's data")
     end
 end`
             },
