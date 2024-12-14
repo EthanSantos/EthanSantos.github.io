@@ -108,7 +108,7 @@ const experiences = [
 const Experience = () => {
     return (
         <div className="min-h-screen bg-white text-black py-12">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-12">
                 <div className="relative">
                     <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300"></div>
 
