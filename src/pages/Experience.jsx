@@ -30,7 +30,7 @@ const experiences = [
         Just started this position, will update in the future.
         `,
         logo: Zotbins,
-        technologies: ["React Native", "JavaScript", "Firebase", "Git"],
+        technologies: ["React Native", "TypeScript", "Firebase", "Git"],
     },
     {
         title: "FGN Mentorship Program",
