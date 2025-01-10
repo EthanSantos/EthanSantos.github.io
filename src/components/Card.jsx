@@ -8,7 +8,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
 
     const handleLearnMore = () => {
         if (link) {
-            navigate(link); // Navigate to the specified route
+            navigate(link);
         }
     };
 
@@ -44,7 +44,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
                     />
                 )}
             </motion.div>
-            <div className="p-4 md:p-6 flex flex-col justify-start w-full md:w-1/2 relative">
+            <div className="p-4 md:p-6 flex flex-col w-full md:w-1/2 relative">
                 <motion.h6
                     className="mb-2 md:mb-4 block text-base md:text-lg font-semibold uppercase leading-relaxed tracking-normal text-black antialiased text-left"
                     initial={{ x: -10 }}
@@ -65,7 +65,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
                         <Pill key={index} text={item.text} />
                     ))}
                 </div>
-                <div className="mt-auto">
+                <div className="mt-auto self-end">
                     <motion.button
                         type="button"
                         onClick={handleLearnMore}
