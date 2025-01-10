@@ -1,13 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import bluesocial from '../assets/bluesocial.png';
-import fusion from '../assets/fusion.png';
-import buzzy from '../assets/buzzy.png';
-import bestbuy from '../assets/bestbuy.png';
-import mtsac from '../assets/mtsac.png';
 import Pill from '../components/Pill';
-import Google from "../assets/Google.png";
-import Zotbins from "../assets/Zotbins.svg"
 
 import { experiences } from '../components/ExperiencesData';
 
