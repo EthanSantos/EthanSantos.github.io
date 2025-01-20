@@ -10,10 +10,10 @@ const Experience = () => {
             <div className="container mx-auto px-4 2xl:px-48">
                 <div className="relative">
                     {/* Timeline vertical line (desktop) */}
-                    <div className="hidden 2xl:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300"></div>
+                    <div className="hidden 2xl:block absolute left-1/2 transform -translate-x-1/2 h-[calc(100%+2rem)] border-l-2 border-gray-300 -top-8"></div>
 
                     {/* Timeline vertical line (mobile/tablet) */}
-                    <div className="2xl:hidden absolute left-6 h-full border-l-2 border-gray-300"></div>
+                    <div className="2xl:hidden absolute left-6 h-[calc(100%+1rem)] border-l-2 border-gray-300 -top-4"></div>
 
                     {experiences.map((exp, index) => (
                         <div
