@@ -2,7 +2,7 @@ import React from 'react';
 import resume from '../assets/resume.pdf';
 
 const Resume = () => {
-    const googleDriveLink = "https://drive.google.com/file/d/1F8ezWbh7f0K_3xq633s-822cDaxrRffY/view?usp=sharing"; // Replace with your Google Drive link
+    const googleDriveLink = "https://drive.google.com/file/d/1F8ezWbh7f0K_3xq633s-822cDaxrRffY/view?usp=sharing";
 
     return (
         <div className="w-full h-[calc(100vh-100px)] flex flex-col justify-start items-center p-24">
