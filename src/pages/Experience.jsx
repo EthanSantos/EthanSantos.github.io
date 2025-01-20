@@ -7,22 +7,22 @@ import { experiences } from '../components/ExperiencesData';
 const Experience = () => {
     return (
         <div className="min-h-screen bg-white text-black py-12">
-            <div className="container mx-auto px-4 xl:px-48">
+            <div className="container mx-auto px-4 2xl:px-48">
                 <div className="relative">
                     {/* Timeline vertical line (desktop) */}
-                    <div className="hidden xl:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300"></div>
+                    <div className="hidden 2xl:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300"></div>
 
                     {/* Timeline vertical line (mobile/tablet) */}
-                    <div className="xl:hidden absolute left-6 h-full border-l-2 border-gray-300"></div>
+                    <div className="2xl:hidden absolute left-6 h-full border-l-2 border-gray-300"></div>
 
                     {experiences.map((exp, index) => (
                         <div
                             key={index}
-                            className="mb-8 flex justify-between items-start w-full xl:flex-row flex-col xl:relative"
+                            className="mb-8 flex justify-between items-start w-full 2xl:flex-row flex-col 2xl:relative"
                         >
                             {/* Logo circle (desktop) */}
                             <div
-                                className="hidden xl:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-20 h-20 rounded-full bg-white border-2 border-gray-300 z-10"
+                                className="hidden 2xl:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-20 h-20 rounded-full bg-white border-2 border-gray-300 z-10"
                                 style={{ top: '50%', transform: 'translate(-50%, -50%)' }}
                             >
                                 <img
@@ -33,7 +33,7 @@ const Experience = () => {
                             </div>
 
                             {/* Mobile/Tablet timeline layout */}
-                            <div className="xl:hidden w-full flex">
+                            <div className="2xl:hidden w-full flex">
                                 {/* Logo circle (mobile/tablet) */}
                                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white border-2 border-gray-300 z-10 relative left-0">
                                     <img
@@ -52,7 +52,7 @@ const Experience = () => {
                                 >
                                     {/* Arrow pointing to logo */}
                                     <div className="absolute left-0 top-[24px] transform -translate-x-full">
-                                        <div className="w-0 h-0 border-t-6 border-t-transparent border-b-6 border-b-transparent border-r-6 border-r-gray-300"></div>
+                                        <div className="w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-gray-300"></div>
                                     </div>
 
                                     <h2 className="text-lg font-bold">{exp.title}</h2>
@@ -73,7 +73,7 @@ const Experience = () => {
                             {index % 2 === 0 ? (
                                 <>
                                     {/* Right-side card (desktop) */}
-                                    <div className="hidden xl:flex xl:w-[45%] justify-end xl:pr-2 relative">
+                                    <div className="hidden 2xl:flex 2xl:w-[45%] justify-end 2xl:pr-2 relative">
                                         <motion.div
                                             className="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-300 w-full"
                                             initial={{ opacity: 0, y: 50 }}
@@ -98,13 +98,13 @@ const Experience = () => {
                                             </div>
                                         </motion.div>
                                     </div>
-                                    <div className="hidden xl:block w-[45%]"></div>
+                                    <div className="hidden 2xl:block w-[45%]"></div>
                                 </>
                             ) : (
                                 <>
-                                    <div className="hidden xl:block w-[45%]"></div>
+                                    <div className="hidden 2xl:block w-[45%]"></div>
                                     {/* Left-side card (desktop) */}
-                                    <div className="hidden xl:flex xl:w-[45%] justify-start xl:pl-2 relative">
+                                    <div className="hidden 2xl:flex 2xl:w-[45%] justify-start 2xl:pl-2 relative">
                                         <motion.div
                                             className="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-300 w-full"
                                             initial={{ opacity: 0, y: 50 }}
