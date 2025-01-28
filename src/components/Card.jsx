@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'; // Heroicons import
 import Pill from './Pill';
 
-const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
+const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink }) => {
     const navigate = useNavigate();
 
     const handleLearnMore = () => {
@@ -19,7 +20,6 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.02, boxShadow: '0px 10px 15px rgba(0, 0, 0, 0.1)' }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            onClick={handleLearnMore}
         >
             <motion.div
                 className="relative m-0 overflow-hidden rounded-t-xl md:rounded-r-none md:rounded-l-xl bg-white bg-clip-border text-gray-700 aspect-w-16 aspect-h-9 md:aspect-w-40 md:aspect-h-10 w-full md:w-1/2"
@@ -65,11 +65,25 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link }) => {
                         <Pill key={index} text={item.text} />
                     ))}
                 </div>
-                <div className="mt-auto self-end">
+                <div className="mt-auto flex justify-between items-center gap-4">
+                    {githubLink && (
+                        <motion.a
+                            href={githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-black hover:text-black transition-colors"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ duration: 0.1 }}
+                        >
+                            <ArrowTopRightOnSquareIcon className="h-5 w-5" />
+                            <span  className="ml-auto flex select-none items-center gap-2 rounded-lg text-center align-middle font-sans text-xs font-bold uppercase text-black transition-transform">GitHub</span>
+                        </motion.a>
+                    )}
                     <motion.button
                         type="button"
                         onClick={handleLearnMore}
-                        className="flex select-none items-center gap-2 rounded-lg text-center align-middle font-sans text-xs font-bold uppercase text-black transition-transform"
+                        className="ml-auto flex select-none items-center gap-2 rounded-lg text-center align-middle font-sans text-xs font-bold uppercase text-black transition-transform"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.1 }}
