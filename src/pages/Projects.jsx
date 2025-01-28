@@ -18,7 +18,7 @@ const Projects = () => {
       <Card
         imageSrc={pharmascan}
         title={"PharmaScan"}
-        skills={[{ text: "React" }, { text: "Flask" }, { text: "YOLOv8" }, { text: "ChatGPT-4o" }, { text: "AWS S3" }, { text: "Supabase" }, { text: "Firebase" }]}
+        skills={[{ text: "React" }, { text: "Flask" }, { text: "YOLOv8" }, { text: "AWS S3" }, { text: "Supabase" }, { text: "Firebase" }]}
         description={`<strong>PharmaScan</strong> is an AI-powered medication identification system developed at <strong>IrvineHacks</strong>. <strong>Problem:</strong> Pharmacists often rely on manual pill identification based on shape and color, leading to errors and inefficiencies. Our solution integrates <strong>YOLOv8</strong> for computer vision and <strong>ChatGPT-4o</strong> for AI-driven analysis, enabling real-time medication verification. We built a <strong>full-stack web app</strong> using <strong>React, Flask, AWS S3, Supabase, and Firebase</strong> to ensure secure authentication and cloud storage for pill images. By automating pill identification, PharmaScan enhances workflow efficiency and reduces human error in pharmacy operations.`}
         link="/pharmascan"
         githubLink="https://github.com/EthanSantos/PharmaScan"

@@ -9,6 +9,7 @@ import Experience from './pages/Experience';
 import NotFound from './pages/NotFound';
 
 import Aimstars from './pages/ProjectArticle/Aimstars';
+import PharmaScan from './pages/ProjectArticle/Pharmascan';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
 
               <Route path="aimstars" element={<Aimstars />} />
+              <Route path="pharmascan" element={<PharmaScan />} />
             </Routes>
           </main>
         </div>
