@@ -46,7 +46,7 @@ const PharmaScan = () => {
             },
             {
                 type: 'subheader',
-                value: "PharmaScan Architecture"
+                value: "Information Architecture"
             },
             {
                 type: 'image',
