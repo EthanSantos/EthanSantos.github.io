@@ -15,7 +15,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
 
   return (
     <motion.div
-      className="relative flex flex-col md:flex-row w-full max-w-[80rem] rounded-xl bg-white bg-clip-border text-gray-700 cursor-pointer"
+      className="relative flex flex-col md:flex-row w-full max-w-[80rem] rounded-xl bg-white bg-clip-border text-gray-700"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{
@@ -79,7 +79,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
                 href={githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-bold uppercase text-gray-700"
+                className="flex items-center gap-2 text-xs font-bold uppercase text-gray-700 cursor-pointer"
                 whileHover={{ opacity: 0.8 }}
                 transition={{ duration: 0.2, ease: 'easeOut' }}
               >
@@ -91,7 +91,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
           <motion.button
             type="button"
             onClick={handleLearnMore}
-            className="flex items-center gap-2 text-xs font-bold uppercase text-gray-700"
+            className="flex items-center gap-2 text-xs font-bold uppercase text-gray-700 cursor-pointer"
             whileHover={{ opacity: 0.8 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
           >
