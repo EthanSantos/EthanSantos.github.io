@@ -74,7 +74,7 @@ const EmailButton = () => {
                 className="mb-2 rounded bg-[#ea4335] w-10 h-10 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg flex items-center justify-center"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                transition={{ duration: 0.1 }}
+                transition={{ duration: 0.05 }}
             >
                 <FaEnvelope className="w-5 h-5" />
             </motion.button>
@@ -95,10 +95,10 @@ const LinkedInButton = () => {
         >
             <motion.button
                 type="button"
-                className="mb-2 ml-2 rounded bg-[#0077b5] w-10 h-10 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg flex items-center justify-center"
+                className="mb-2 ml-2 rounded bg-[#0077b5] w-10 h-10 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg flex items-center justify-center"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                transition={{ duration: 0.1 }}
+                transition={{ duration: 0.05 }}
             >
                 <FaLinkedin className="w-5 h-5" />
             </motion.button>
@@ -122,7 +122,7 @@ const GithubButton = () => {
                 className="mb-2 ml-2 rounded bg-[#333] w-10 h-10 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg flex items-center justify-center"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                transition={{ duration: 0.1 }}
+                transition={{ duration: 0.05 }}
             >
                 <FaGithub className="w-5 h-5" />
             </motion.button>
