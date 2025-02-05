@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { CodeBracketIcon } from '@heroicons/react/24/outline';
+import { FaGithub } from 'react-icons/fa';
 import Pill from './Pill';
 
 const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink }) => {
@@ -46,22 +46,12 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
             </motion.div>
             <div className="p-4 md:p-6 flex flex-col w-full md:w-1/2 relative">
                 <motion.h6
-                    className="mb-2 md:mb-4 flex items-center gap-2 text-base md:text-lg font-semibold uppercase leading-relaxed tracking-normal text-black antialiased text-left"
+                    className="mb-2 md:mb-4 block text-base md:text-lg font-semibold uppercase leading-relaxed tracking-normal text-black antialiased text-left"
                     initial={{ x: -10 }}
                     animate={{ x: 0 }}
                     transition={{ delay: 0.5 }}
                 >
                     {title}
-                    {githubLink && (
-                        <a
-                            href={githubLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center text-black hover:text-gray-900 transition-colors"
-                        >
-                            <CodeBracketIcon className="h-4 w-4" />
-                        </a>
-                    )}
                 </motion.h6>
                 <motion.p
                     className="mb-4 block text-sm md:text-base font-normal leading-relaxed text-gray-500 antialiased text-left"
@@ -75,7 +65,20 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
                         <Pill key={index} text={item.text} />
                     ))}
                 </div>
-                <div className="mt-auto flex justify-end">
+                <div className="mt-auto flex justify-between items-center">
+                    {githubLink && (
+                        <motion.a
+                            href={githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                        >
+                            <FaGithub className="h-4 w-4" />
+                            View Code
+                        </motion.a>
+                    )}
                     <motion.button
                         type="button"
                         onClick={handleLearnMore}
