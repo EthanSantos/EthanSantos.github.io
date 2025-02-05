@@ -65,25 +65,28 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
                         <Pill key={index} text={item.text} />
                     ))}
                 </div>
-                <div className="mt-auto flex justify-between items-center">
-                    {githubLink && (
-                        <motion.a
-                            href={githubLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors"
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                        >
-                            <FaGithub className="h-4 w-4" />
-                            View Code
-                        </motion.a>
-                    )}
+                {/* Footer with GitHub link and Learn More button */}
+                <div className="mt-auto flex items-center justify-between">
+                    {/* Left container with a minimum width to keep the layout consistent */}
+                    <div className="min-w-[120px]">
+                        {githubLink && (
+                            <motion.a
+                                href={githubLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-xs font-bold uppercase text-black transition-transform hover:scale-105"
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <FaGithub className="h-4 w-4" />
+                                View Code
+                            </motion.a>
+                        )}
+                    </div>
+                    {/* Learn More button stays right-aligned */}
                     <motion.button
                         type="button"
                         onClick={handleLearnMore}
-                        className="flex items-center gap-2 text-xs font-bold uppercase text-black transition-transform"
-                        whileHover={{ scale: 1.05 }}
+                        className="flex items-center gap-2 text-xs font-bold uppercase text-black transition-transform hover:scale-105"
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.1 }}
                     >
