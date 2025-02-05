@@ -8,6 +8,9 @@ const Footer = () => {
                 <p className="text-sm text-gray-500">
                     COPYRIGHT © {new Date().getFullYear()} ETHAN SANTOS. ALL RIGHTS RESERVED.
                 </p>
+                <p className="text-xs text-gray-400 mt-2">
+                    Built with React and Tailwind CSS
+                </p>
             </div>
         </footer>
     );
