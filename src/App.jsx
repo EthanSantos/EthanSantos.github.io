@@ -27,8 +27,8 @@ function App() {
               <Route path="/experience" element={<Experience />} />
               <Route path="*" element={<NotFound />} />
 
-              <Route path="aimstars" element={<Aimstars />} />
-              <Route path="pharmascan" element={<PharmaScan />} />
+              <Route path="/projects/aimstars" element={<Aimstars />} />
+              <Route path="/projects/pharmascan" element={<PharmaScan />} />
             </Routes>
           </main>
         </div>

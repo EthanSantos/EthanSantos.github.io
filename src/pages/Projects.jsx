@@ -13,14 +13,14 @@ const Projects = () => {
         skills={[{ text: "Lua" }, { text: "Roblox Studio" }, { text: "Git" }]}
         description={"In 2020, I developed <strong>AIMSTARS</strong>, a first-person shooter aim training game on <strong>Roblox</strong>, which became my most successful project with over <strong>9.2 million plays</strong>, <strong>15,000 monthly active users</strong>, and <strong>$30,000 in revenue</strong>. I coded the game in <strong>Lua</strong>, handling all aspects of production, including 3D modeling and UI design. Key features included sophisticated bots with human-like movement patterns, a global leaderboard system, and a multiplayer mode that boosted engagement by <strong>40%</strong>. I also created in-game products that contributed significantly to revenue and actively marketed the game through trailers and ads. This multi-year project honed my programming skills and deepened my understanding of game development, marketing, and user engagement."}
         isVideo={true}
-        link="/aimstars"
+        link="/projects/aimstars"
       />
       <Card
         imageSrc={pharmascan}
         title={"PharmaScan"}
         skills={[{ text: "React" }, { text: "Flask" }, { text: "YOLOv8" }, { text: "AWS S3" }, { text: "Supabase" }, { text: "Firebase" }]}
         description={`<strong>PharmaScan</strong> is an AI-powered medication identification system developed at <strong>IrvineHacks</strong>. <strong>Problem:</strong> Pharmacists often rely on manual pill identification based on shape and color, leading to errors and inefficiencies. Our solution integrates <strong>YOLOv8</strong> for computer vision and <strong>ChatGPT-4o</strong> for AI-driven analysis, enabling real-time medication verification. We built a <strong>full-stack web app</strong> using <strong>React, Flask, AWS S3, Supabase, and Firebase</strong> to ensure secure authentication and cloud storage for pill images. By automating pill identification, PharmaScan enhances workflow efficiency and reduces human error in pharmacy operations.`}
-        link="/pharmascan"
+        link="/projects/pharmascan"
         githubLink="https://github.com/EthanSantos/PharmaScan"
       />
 
