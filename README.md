@@ -1,8 +1,15 @@
 # My Portfolio Website
 
-Welcome to my personal portfolio website! This website showcases my work, skills, and experiences as a developer. The site is built with modern web technologies including Vite + React, Tailwind CSS, and Framer Motion.
+Welcome to my personal portfolio website! This website showcases my work, skills, and experiences as a developer.
 
 Visit my portfolio: [https://ethansantos.github.io](https://ethansantos.github.io)
+
+## Tech Stack
+
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 
 ## Contact
 
