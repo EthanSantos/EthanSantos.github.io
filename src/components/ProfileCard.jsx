@@ -5,7 +5,7 @@ import profilePic from '../assets/ProfilePic.png';
 const ProfileCard = () => {
   return (
     <header className="w-full bg-white">
-      <div className="max-w-7xl mx-auto px-6 pt-12">
+      <div className="max-w-8xl mx-auto px-36 pt-12">
         <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-8">
           {/* Profile Info */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
