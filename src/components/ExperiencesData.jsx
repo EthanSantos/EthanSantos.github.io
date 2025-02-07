@@ -39,7 +39,7 @@ export const experiences = [
     date: "Oct. 2024 – Present",
     location: "Irvine, CA",
     description: `
-        Just started this position, will update in the future.
+        An independent group of undergraduate researchers passionate about technology-based zero waste management. 
         `,
     logo: Zotbins,
     technologies: ["React Native", "TypeScript", "Firebase", "Git"],
