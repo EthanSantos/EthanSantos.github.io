@@ -5,10 +5,10 @@ import profilePic from '../assets/ProfilePic.png';
 const ProfileCard = () => {
   return (
     <header className="w-full bg-white">
-      <div className="max-w-7xl mx-auto px-6 pt-12">
-        <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-12 pt-12">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-12">
           {/* Profile Info */}
-          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 sm:pl-4">
             <div className="shrink-0">
               <div className="w-28 h-28 rounded-full overflow-hidden">
                 <img 
@@ -33,7 +33,7 @@ const ProfileCard = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex gap-6">
+          <div className="flex gap-6 sm:pr-4">
             <SocialLink 
               href="mailto:ethanas1@uci.edu"
               icon={<Mail className="w-5 h-5" />}
