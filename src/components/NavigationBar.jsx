@@ -1,7 +1,31 @@
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const NavigationBar = () => {
+  // Track if the user has scrolled down past 50 pixels
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Change threshold as needed
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Use conditional classes based on scroll state
+  const navContainerClass = `
+    sticky top-0 z-50 w-full shadow-sm rounded-xl transition-all duration-300
+    ${scrolled ? 'bg-white/70 backdrop-blur-sm py-2' : 'bg-white py-4'}
+  `;
+
   const buttonClass = ({ isActive }) => `
     relative px-4 py-2 text-base
     transition-all duration-300 ease-in-out
@@ -9,10 +33,9 @@ const NavigationBar = () => {
   `;
 
   return (
-    // Add sticky, top positioning, and a high z-index to ensure it remains on top.
-    <div className="sticky top-0 z-50 w-full bg-white shadow-sm rounded-xl">
+    <div className={navContainerClass}>
       <motion.nav
-        className="max-w-2xl mx-auto py-4 px-3"
+        className="max-w-2xl mx-auto px-3"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeInOut' }}
