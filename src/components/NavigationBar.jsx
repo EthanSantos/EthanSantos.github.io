@@ -23,7 +23,7 @@ const NavigationBar = () => {
   // Use conditional classes based on scroll state
   const navContainerClass = `
     sticky top-0 z-50 w-full shadow-sm rounded-xl transition-all duration-300
-    ${scrolled ? 'bg-white/70 backdrop-blur-sm py-2' : 'bg-white py-4'}
+    ${scrolled ? 'bg-white/70 backdrop-blur-sm py-2' : 'bg-white py-2'}
   `;
 
   const buttonClass = ({ isActive }) => `
