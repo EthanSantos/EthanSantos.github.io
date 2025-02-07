@@ -3,13 +3,14 @@ import { NavLink } from 'react-router-dom';
 
 const NavigationBar = () => {
   const buttonClass = ({ isActive }) => `
-        relative px-4 py-2 text-base
-        transition-all duration-300 ease-in-out
-        ${isActive ? 'font-bold text-black' : 'font-normal text-gray-600 hover:text-black'}
-    `;
+    relative px-4 py-2 text-base
+    transition-all duration-300 ease-in-out
+    ${isActive ? 'font-bold text-black' : 'font-normal text-gray-600 hover:text-black'}
+  `;
 
   return (
-    <div className="w-full bg-white shadow-sm rounded-xl">
+    // Add sticky, top positioning, and a high z-index to ensure it remains on top.
+    <div className="sticky top-0 z-50 w-full bg-white shadow-sm rounded-xl">
       <motion.nav
         className="max-w-2xl mx-auto py-4 px-3"
         initial={{ opacity: 0, y: -50 }}
