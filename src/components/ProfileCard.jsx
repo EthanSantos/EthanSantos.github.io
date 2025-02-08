@@ -35,8 +35,10 @@ const socialLinks = [
 const ProfileCard = () => (
   <header className="w-full bg-white overflow-x-hidden">
     <div className="max-w-8xl mx-auto px-6 sm:px-12 md:px-24 lg:px-36 pt-12">
-      <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-8">
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
+      <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-8">
+        {/* Image and Text Container */}
+        <div className="flex flex-col sm:flex-row items-center gap-8">
+          {/* Profile Picture */}
           <div className="shrink-0">
             <div className="w-28 h-28 rounded-full overflow-hidden">
               <img
@@ -47,17 +49,19 @@ const ProfileCard = () => (
               />
             </div>
           </div>
-          <div className="text-center sm:text-left">
-            <h1 className="text-2xl font-semibold text-gray-900 mb-2">
+          {/* Text Content */}
+          <div className="text-center sm:text-left flex flex-col justify-center">
+            <h1 className="text-2xl font-semibold text-gray-900 mb-2 leading-tight">
               Ethan Santos
             </h1>
-            <p className="text-gray-600 mb-1">Computer Science Major</p>
-            <p className="text-gray-500">
+            <p className="text-gray-600 mb-1 leading-tight">Computer Science Major</p>
+            <p className="text-gray-500 leading-tight">
               University of California, Irvine
             </p>
           </div>
         </div>
 
+        {/* Social Links */}
         <div className="flex gap-6">
           {socialLinks.map(({ href, icon, label, hoverClass }, index) => (
             <SocialLink
