@@ -1,66 +1,87 @@
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
+const navItems = [
+  { path: '/about', label: 'about' },
+  { path: '/projects', label: 'projects' },
+  { path: '/experience', label: 'experience' },
+  { path: '/resume', label: 'resume' },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0, y: -50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeInOut'
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0 },
+  visible: (i) => ({
+    opacity: 1,
+    transition: { delay: i * 0.2, duration: 0.5 }
+  })
+};
 
 const NavigationBar = () => {
-  // Track if the user has scrolled down past 50 pixels
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      // Change threshold as needed
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Use conditional classes based on scroll state
+  // Use template literals to conditionally apply styles
   const navContainerClass = `
-    sticky top-0 z-50 w-full shadow-sm rounded-xl transition-all duration-300
-    ${scrolled ? 'bg-white/70 backdrop-blur-sm py-2' : 'bg-white py-2'}
+    sticky top-0 z-50 w-full shadow-sm rounded-xl transition-all duration-300 py-2
+    ${scrolled ? 'bg-white/70 backdrop-blur-sm' : 'bg-white'}
   `;
 
-  const buttonClass = ({ isActive }) => `
-    relative px-4 py-2 text-base
-    transition-all duration-300 ease-in-out
+  // Function that returns the classes for each NavLink based on its active state
+  const linkClass = ({ isActive }) => `
+    relative px-4 py-2 text-base transition-all duration-300 ease-in-out
     ${isActive ? 'font-bold text-black' : 'font-normal text-gray-600 hover:text-black'}
   `;
 
   return (
     <div className={navContainerClass}>
       <motion.nav
+        role="navigation"
+        aria-label="Main Navigation"
         className="max-w-2xl mx-auto px-3"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeInOut' }}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
         <ul className="flex justify-evenly items-center space-x-6">
-          {[
-            { path: '/about', label: 'about' },
-            { path: '/projects', label: 'projects' },
-            { path: '/experience', label: 'experience' },
-            { path: '/resume', label: 'resume' },
-          ].map(({ path, label }, index) => (
+          {navItems.map((item, index) => (
             <motion.li
-              key={label}
+              key={item.label}
+              custom={index} 
+              variants={itemVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.2 }}
             >
-              <NavLink to={path} className={(navData) => buttonClass(navData)}>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: index * 0.2, duration: 0.5 }}
-                >
-                  {label}
-                </motion.div>
+              <NavLink to={item.path} className={linkClass}>
+                {item.label}
               </NavLink>
             </motion.li>
           ))}
