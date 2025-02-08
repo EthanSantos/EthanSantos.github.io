@@ -96,7 +96,6 @@ const About = () => {
                 </p>
                 <p className="text-sm">Irvine, CA</p>
               </div>
-              <p className="text-base text-gray-600">GPA: 3.9 / 4.0</p>
             </div>
           </motion.div>
 
@@ -125,7 +124,6 @@ const About = () => {
                 </p>
                 <p className="text-sm">Walnut, CA</p>
               </div>
-              <p className="text-base text-gray-600">GPA: 3.94 / 4.0</p>
             </div>
           </motion.div>
 
