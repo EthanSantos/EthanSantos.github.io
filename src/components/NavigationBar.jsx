@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+// Define your navigation items outside of the component
 const navItems = [
   { path: '/about', label: 'about' },
   { path: '/projects', label: 'projects' },
@@ -9,6 +10,7 @@ const navItems = [
   { path: '/resume', label: 'resume' },
 ];
 
+// Variants for the navigation container
 const containerVariants = {
   hidden: { opacity: 0, y: -50 },
   visible: {
@@ -16,17 +18,18 @@ const containerVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeInOut'
-    }
-  }
+      ease: 'easeInOut',
+    },
+  },
 };
 
+// Variants for each list item (using the index for a staggered effect)
 const itemVariants = {
   hidden: { opacity: 0 },
   visible: (i) => ({
     opacity: 1,
-    transition: { delay: i * 0.2, duration: 0.5 }
-  })
+    transition: { delay: i * 0.2, duration: 0.5 },
+  }),
 };
 
 const NavigationBar = () => {
@@ -34,7 +37,6 @@ const NavigationBar = () => {
 
   useEffect(() => {
     let ticking = false;
-
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
@@ -49,17 +51,17 @@ const NavigationBar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Use template literals to conditionally apply styles
   const navContainerClass = `
-    sticky top-0 z-50 w-full shadow-sm rounded-xl transition-all duration-300 py-2
-    ${scrolled ? 'bg-white/70 backdrop-blur-sm' : 'bg-white'}
+    sticky top-0 z-50 w-full shadow-sm rounded-xl transition-all duration-300
+    ${scrolled ? 'bg-white/70 backdrop-blur-sm py-8' : 'bg-white py-8'}
   `;
 
-  // Function that returns the classes for each NavLink based on its active state
   const linkClass = ({ isActive }) => `
     relative px-4 py-2 text-base transition-all duration-300 ease-in-out
     ${isActive ? 'font-bold text-black' : 'font-normal text-gray-600 hover:text-black'}
   `;
+
+  const handleNavClick = () => window.scrollTo(0, 0);
 
   return (
     <div className={navContainerClass}>
@@ -75,12 +77,16 @@ const NavigationBar = () => {
           {navItems.map((item, index) => (
             <motion.li
               key={item.label}
-              custom={index} 
+              custom={index}
               variants={itemVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <NavLink to={item.path} className={linkClass}>
+              <NavLink
+                to={item.path}
+                className={linkClass}
+                onClick={handleNavClick}
+              >
                 {item.label}
               </NavLink>
             </motion.li>
