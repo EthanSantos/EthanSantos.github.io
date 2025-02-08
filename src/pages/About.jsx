@@ -176,6 +176,8 @@ const About = () => {
               "HTML",
               "CSS",
               "Flask",
+              "Fastify",
+              "Express",
               "AWS",
               "Docker",
               "TailwindCSS",
