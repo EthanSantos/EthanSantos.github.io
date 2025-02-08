@@ -10,6 +10,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
   const handleLearnMore = () => {
     if (link) {
       navigate(link);
+      window.scrollTo(0, 0);
     }
   };
 
