@@ -34,7 +34,9 @@ const itemVariants = {
 
 /**
  * ParallaxImage Component  
- * Uses useScroll and useTransform to create a subtle parallax effect on images.
+ * Uses a dedicated image container with overflow-hidden and rounded corners.
+ * The image is wrapped in a motion.div so that its container clips the image,
+ * ensuring both the top and bottom corners remain rounded.
  */
 const ParallaxImage = ({ src, alt, caption }) => {
   const ref = React.useRef(null);
@@ -45,27 +47,29 @@ const ParallaxImage = ({ src, alt, caption }) => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <motion.figure
-      ref={ref}
-      className="flex flex-col items-center my-4 overflow-hidden" // Prevents overflow during hover
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
-      variants={itemVariants}
-    >
-      <motion.img
-        src={src}
-        alt={alt || 'Blog image'}
-        className="rounded-lg"
-        style={{ y }}
-        whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
-      />
+    <figure ref={ref} className="flex flex-col items-center my-4">
+      {/* Image container with proper rounding and overflow clipping */}
+      <motion.div
+        className="w-full overflow-hidden rounded-lg"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={itemVariants}
+      >
+        <motion.img
+          src={src}
+          alt={alt || 'Blog image'}
+          className="w-full" // Ensures the image fills the container
+          style={{ y }}
+          whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+        />
+      </motion.div>
       {caption && (
         <figcaption className="text-sm text-gray-500 mt-2">
           {caption}
         </figcaption>
       )}
-    </motion.figure>
+    </figure>
   );
 };
 
