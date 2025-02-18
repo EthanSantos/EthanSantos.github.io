@@ -1,6 +1,6 @@
 # My Portfolio Website
 
-Welcome to my personal portfolio website! This website showcases my work, skills, and experiences as a developer.
+Welcome to my personal portfolio website! This website showcases my work, skills, and experiences as a software developer.
 
 Visit my portfolio: [website](https://ethansantos.github.io)
 
