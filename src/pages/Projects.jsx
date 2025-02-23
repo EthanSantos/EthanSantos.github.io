@@ -3,6 +3,7 @@ import Card from '../components/Card'
 import nagaguard from '../assets/nagaguard.png'
 import spacetro from '../assets/spacetro.png'
 import pharmascan from '../assets/PharmaScan.png'
+import pyroAI from '../assets/pyroai.png'
 
 const Projects = () => {
   return (
@@ -14,6 +15,26 @@ const Projects = () => {
         description={"In 2020, I developed <strong>AIMSTARS</strong>, a first-person shooter aim training game on <strong>Roblox</strong>, which became my most successful project with over <strong>9.2 million plays</strong>, <strong>15,000 monthly active users</strong>, and <strong>$30,000 in revenue</strong>. I coded the game in <strong>Lua</strong>, handling all aspects of production, including 3D modeling and UI design. Key features included sophisticated bots with human-like movement patterns, a global leaderboard system, and a multiplayer mode that boosted engagement by <strong>40%</strong>. I also created in-game products that contributed significantly to revenue and actively marketed the game through trailers and ads. This multi-year project honed my programming skills and deepened my understanding of game development, marketing, and user engagement."}
         isVideo={true}
         link="/projects/aimstars"
+      />
+      <Card
+        imageSrc={pyroAI}
+        title={"Pyro.AI"}
+        skills={[
+          { text: "NextJS" },
+          { text: "Flask" },
+          { text: "TypeScript" },
+          { text: "Python" },
+          { text: "YOLOv8" },
+          { text: "Tensorflow" },
+          { text: "Tailwind" },
+          { text: "ShadCN" },
+          { text: "OpenRouteService" },
+          { text: "GeminiAI" },
+          { text: "Vercel" }
+        ]}
+        description={`Inspired by the devastating January 2025 wildfires in Los Angeles, we built <strong>Pyro.AI</strong> for <strong>TreeHacks 2025</strong>—a centralized wildfire monitoring dashboard that combines <strong>real-time fire detection</strong> using YOLOv8, <strong>automated evacuation planning</strong> with optimized routing via OpenRouteService, and an <strong>intelligent chat system</strong> powered by <strong>Google Gemini</strong> for actionable safety insights. We built this in under 30 hours to help people react faster, stay informed, and make better decisions during wildfires.`}
+        link="/pyroai"
+        githubLink="https://github.com/EthanSantos/Pyro-AI"
       />
       <Card
         imageSrc={pharmascan}
