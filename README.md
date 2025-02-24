@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio website! This website showcases my work, skills, and experiences as a software developer.
 
-Check out my portfolio: [website](https://ethansantos.github.io)
+Check out my portfolio [website](https://ethansantos.github.io)!
 
 ## Tech Stack
 
