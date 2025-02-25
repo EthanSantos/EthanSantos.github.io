@@ -20,11 +20,31 @@ const Resume = () => {
 
             {/* Display iframe for larger screens */}
             <div className="hidden sm:block max-w-2xl mx-auto w-full h-full">
-                <iframe 
+                <object
+                    data={resume}
+                    type="application/pdf"
                     className="w-full h-full"
-                    src={`${resume}#view=FitH`}
                     title="Resume"
-                ></iframe>
+                >
+                    <p>
+                        It appears your browser doesn't support PDFs. You can {" "}
+                        <a 
+                            href={resume} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            download the PDF
+                        </a> {" "}
+                        or {" "}
+                        <a 
+                            href={googleDriveLink} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            view it on Google Drive
+                        </a>.
+                    </p>
+                </object>
             </div>
         </div>
     );
