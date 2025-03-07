@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import profilePic from '../assets/ProfilePic.png';
 
 // Array of social links
@@ -37,10 +37,10 @@ const ProfileCard = () => (
     <div className="max-w-8xl mx-auto px-6 sm:px-12 md:px-24 lg:px-36 pt-12">
       <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-8">
         {/* Image and Text Container */}
-        <div className="flex flex-col sm:flex-row items-center gap-8">
+        <div className="flex flex-col sm:flex-row items-center gap-6">
           {/* Profile Picture */}
           <div className="shrink-0">
-            <div className="w-28 h-28 rounded-full overflow-hidden">
+            <div className="w-28 h-28 rounded-lg overflow-hidden">
               <img
                 src={profilePic}
                 alt="Ethan Santos"
@@ -49,13 +49,13 @@ const ProfileCard = () => (
               />
             </div>
           </div>
-          {/* Text Content */}
+          {/* Text Content - More compact */}
           <div className="text-center sm:text-left flex flex-col justify-center">
-            <h1 className="text-2xl font-semibold text-gray-900 mb-2 leading-tight">
+            <h1 className="text-2xl font-bold text-gray-900 mb-1 leading-none">
               Ethan Santos
             </h1>
-            <p className="text-gray-600 mb-1 leading-tight">Computer Science Major</p>
-            <p className="text-gray-500 leading-tight">
+            <p className="text-gray-600 mb-1 text-base leading-snug">Computer Science Major</p>
+            <p className="text-gray-500 text-base leading-snug">
               University of California, Irvine
             </p>
           </div>
