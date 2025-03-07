@@ -9,10 +9,57 @@ const navItems = [
   { path: '/resume', label: 'resume' },
 ];
 
+// Enhanced item variants with initial loading animation
 const itemVariants = {
-  // Items now simply remain visible without an initial entrance animation.
-  hover: { scale: 1.1, transition: { duration: 0.2 } },
-  tap: { scale: 0.95, transition: { duration: 0.2 } },
+  hidden: { 
+    y: -20, 
+    opacity: 0 
+  },
+  visible: (i) => ({ 
+    y: 0, 
+    opacity: 1,
+    transition: {
+      delay: i * 0.1,
+      type: "spring",
+      stiffness: 300,
+      damping: 15,
+    }
+  }),
+  hover: { 
+    scale: 1.1, 
+    transition: { 
+      type: "spring",
+      stiffness: 400,
+      damping: 10
+    } 
+  },
+  tap: { 
+    scale: 0.95, 
+    transition: { 
+      type: "spring",
+      stiffness: 400,
+      damping: 15
+    } 
+  },
+};
+
+// Nav container initial load animation
+const containerVariants = {
+  hidden: { 
+    y: -20, 
+    opacity: 0 
+  },
+  visible: { 
+    y: 0, 
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
 };
 
 const NavigationBar = () => {
@@ -49,15 +96,19 @@ const NavigationBar = () => {
 
   return (
     <div className={navContainerClass}>
-      <nav
+      <motion.nav
         role="navigation"
         aria-label="Main Navigation"
         className="max-w-2xl mx-auto px-3"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
       >
-        <ul className="flex justify-evenly items-center space-x-6">
-          {navItems.map((item) => (
+        <motion.ul className="flex justify-evenly items-center space-x-6">
+          {navItems.map((item, i) => (
             <motion.li
               key={item.label}
+              custom={i}
               variants={itemVariants}
               whileHover="hover"
               whileTap="tap"
@@ -67,8 +118,8 @@ const NavigationBar = () => {
               </NavLink>
             </motion.li>
           ))}
-        </ul>
-      </nav>
+        </motion.ul>
+      </motion.nav>
     </div>
   );
 };
