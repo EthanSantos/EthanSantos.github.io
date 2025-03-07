@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
 import profilePic from '../assets/ProfilePic.png';
 
 // Array of social links
@@ -32,62 +33,161 @@ const socialLinks = [
   },
 ];
 
-const ProfileCard = () => (
-  <header className="w-full bg-white overflow-x-hidden">
-    <div className="max-w-8xl mx-auto px-6 sm:px-12 md:px-24 lg:px-36 pt-12">
-      <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-8">
-        {/* Image and Text Container */}
-        <div className="flex flex-col sm:flex-row items-center gap-6">
-          {/* Profile Picture */}
-          <div className="shrink-0">
-            <div className="w-28 h-28 rounded-lg overflow-hidden">
-              <img
-                src={profilePic}
-                alt="Ethan Santos"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          {/* Text Content - More compact */}
-          <div className="text-center sm:text-left flex flex-col justify-center">
-            <h1 className="text-2xl font-bold text-gray-900 mb-1 leading-none">
-              Ethan Santos
-            </h1>
-            <p className="text-gray-600 mb-1 text-base leading-snug">Computer Science Major</p>
-            <p className="text-gray-500 text-base leading-snug">
-              University of California, Irvine
-            </p>
-          </div>
-        </div>
+const ProfileCard = () => {
+  // Container animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.2,
+        delayChildren: 0.2,
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
 
-        {/* Social Links */}
-        <div className="flex gap-6">
-          {socialLinks.map(({ href, icon, label, hoverClass }, index) => (
-            <SocialLink
-              key={index}
-              href={href}
-              icon={icon}
-              label={label}
-              className={hoverClass}
-            />
-          ))}
+  // Profile pic animation variants
+  const profilePicVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: { 
+      scale: 1, 
+      opacity: 1,
+      transition: { 
+        type: "spring",
+        stiffness: 300,
+        damping: 15,
+        duration: 0.5
+      }
+    }
+  };
+
+  // Text content animation variants
+  const textVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { 
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+        duration: 0.5
+      }
+    }
+  };
+
+  // Social links container animation
+  const socialsContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.1,
+        delayChildren: 0.6,
+        duration: 0.5
+      }
+    }
+  };
+
+  // Individual social link animation
+  const socialItemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        type: "spring",
+        stiffness: 300,
+        damping: 20
+      }
+    }
+  };
+
+  return (
+    <motion.header
+      className="w-full bg-white overflow-x-hidden"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <div className="max-w-8xl mx-auto px-6 sm:px-12 md:px-24 lg:px-36 pt-12">
+        <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-8">
+          {/* Image and Text Container */}
+          <div className="flex flex-col sm:flex-row items-center gap-6">
+            {/* Profile Picture with bounce animation */}
+            <motion.div 
+              className="shrink-0"
+              variants={profilePicVariants}
+            >
+              <div className="w-28 h-28 rounded-lg overflow-hidden">
+                <img
+                  src={profilePic}
+                  alt="Ethan Santos"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+            
+            {/* Text Content with slide-in animation */}
+            <motion.div 
+              className="text-center sm:text-left flex flex-col justify-center"
+              variants={textVariants}
+            >
+              <h1 className="text-2xl font-bold text-gray-900 mb-1 leading-none">
+                Ethan Santos
+              </h1>
+              <p className="text-gray-600 mb-1 text-base leading-snug">Computer Science Major</p>
+              <p className="text-gray-500 text-base leading-snug">
+                University of California, Irvine
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Social Links with staggered animation */}
+          <motion.div 
+            className="flex gap-6"
+            variants={socialsContainerVariants}
+          >
+            {socialLinks.map(({ href, icon, label, hoverClass }, index) => (
+              <SocialLink
+                key={index}
+                href={href}
+                icon={icon}
+                label={label}
+                className={hoverClass}
+                variants={socialItemVariants}
+              />
+            ))}
+          </motion.div>
         </div>
       </div>
-    </div>
-  </header>
-);
+    </motion.header>
+  );
+};
 
-const SocialLink = ({ href, icon, label, className = '' }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={label}
-    className={`text-gray-500 transition-colors duration-200 ${className}`}
-  >
-    {icon}
-  </a>
-);
+// Enhanced SocialLink component with hover animations
+const SocialLink = ({ href, icon, label, className = '', variants }) => {
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className={`text-gray-500 transition-colors duration-200 ${className}`}
+      variants={variants}
+      whileHover={{ 
+        scale: 1.2, 
+        rotate: 5,
+        transition: { type: "spring", stiffness: 400, damping: 10 }
+      }}
+      whileTap={{ scale: 0.9 }}
+    >
+      {icon}
+    </motion.a>
+  );
+};
 
 export default ProfileCard;
