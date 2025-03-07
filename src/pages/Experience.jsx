@@ -9,10 +9,10 @@ const Experience = () => {
         <div className="min-h-screen bg-white text-black py-12">
             <div className="container mx-auto px-4 2xl:px-48">
                 <div className="relative">
-                    {/* Timeline vertical line (desktop) */}
+                    {/* Timeline vertical line (desktop) - original 2px width */}
                     <div className="hidden 2xl:block absolute left-1/2 transform -translate-x-1/2 h-[calc(100%+2rem)] border-l-2 border-gray-300 -top-8"></div>
 
-                    {/* Timeline vertical line (mobile/tablet) */}
+                    {/* Timeline vertical line (mobile/tablet) - original 2px width */}
                     <div className="2xl:hidden absolute left-6 h-[calc(100%+1rem)] border-l-2 border-gray-300 -top-4"></div>
 
                     {experiences.map((exp, index) => (
@@ -46,9 +46,9 @@ const Experience = () => {
                                 {/* Content card (mobile/tablet) */}
                                 <motion.div
                                     className="flex-grow ml-4 bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-300 relative"
-                                    initial={{ opacity: 0, y: 50 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: index * 0.2 }}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.6, delay: index * 0.2 }}
                                 >
                                     {/* Arrow pointing to logo */}
                                     <div className="absolute left-0 top-[24px] transform -translate-x-full">
@@ -76,9 +76,9 @@ const Experience = () => {
                                     <div className="hidden 2xl:flex 2xl:w-[45%] justify-end 2xl:pr-2 relative">
                                         <motion.div
                                             className="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-300 w-full"
-                                            initial={{ opacity: 0, y: 50 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.5, delay: index * 0.2 }}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ duration: 0.6, delay: index * 0.2 }}
                                         >
                                             {/* Arrow (right) */}
                                             <div className="absolute right-0 top-1/2 transform translate-x-full -translate-y-1/2">
@@ -107,9 +107,9 @@ const Experience = () => {
                                     <div className="hidden 2xl:flex 2xl:w-[45%] justify-start 2xl:pl-2 relative">
                                         <motion.div
                                             className="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-300 w-full"
-                                            initial={{ opacity: 0, y: 50 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.5, delay: index * 0.2 }}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ duration: 0.6, delay: index * 0.2 }}
                                         >
                                             {/* Arrow (left) */}
                                             <div className="absolute left-0 top-1/2 transform -translate-x-full -translate-y-1/2">
