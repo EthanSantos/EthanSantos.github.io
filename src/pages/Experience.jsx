@@ -46,9 +46,16 @@ const Experience = () => {
                                 {/* Content card (mobile/tablet) */}
                                 <motion.div
                                     className="flex-grow ml-4 bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-300 relative"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ 
+                                        type: "spring", 
+                                        stiffness: 300, 
+                                        damping: 15,
+                                        mass: 1.2,
+                                        delay: index * 0.1 
+                                    }}
                                 >
                                     {/* Arrow pointing to logo */}
                                     <div className="absolute left-0 top-[24px] transform -translate-x-full">
@@ -76,9 +83,16 @@ const Experience = () => {
                                     <div className="hidden 2xl:flex 2xl:w-[45%] justify-end 2xl:pr-2 relative">
                                         <motion.div
                                             className="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-300 w-full"
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            transition={{ duration: 0.6, delay: index * 0.2 }}
+                                            initial={{ opacity: 0, x: 70 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true, margin: "-100px" }}
+                                            transition={{ 
+                                                type: "spring", 
+                                                stiffness: 300, 
+                                                damping: 15,
+                                                mass: 1.2,
+                                                delay: index * 0.1 
+                                            }}
                                         >
                                             {/* Arrow (right) */}
                                             <div className="absolute right-0 top-1/2 transform translate-x-full -translate-y-1/2">
@@ -107,9 +121,16 @@ const Experience = () => {
                                     <div className="hidden 2xl:flex 2xl:w-[45%] justify-start 2xl:pl-2 relative">
                                         <motion.div
                                             className="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-300 w-full"
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            transition={{ duration: 0.6, delay: index * 0.2 }}
+                                            initial={{ opacity: 0, x: -70 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true, margin: "-100px" }}
+                                            transition={{ 
+                                                type: "spring", 
+                                                stiffness: 300, 
+                                                damping: 15,
+                                                mass: 1.2,
+                                                delay: index * 0.1 
+                                            }}
                                         >
                                             {/* Arrow (left) */}
                                             <div className="absolute left-0 top-1/2 transform -translate-x-full -translate-y-1/2">
