@@ -12,61 +12,140 @@ const About = () => {
       "1st place - Coinbase Onchain Summer Buildathon ($10,000 prize), 2024",
       "1st place - UCR BearHacks (Best Startup), 2024",
       "1st place - Best User Experience Award at Roblox x USC Game Jam ($1000 prize), 2024",
-      "Dean’s Honors List",
+      "Dean's Honors List",
       "Mount San Antonio College Honors Program"
     ]
+  };
+
+  // Main container animation
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+        duration: 0.8, 
+        ease: "easeInOut" 
+      }
+    }
+  };
+
+  // Heading animation - slide in from left with spring physics
+  const headingVariants = {
+    hidden: { x: -50, opacity: 0 },
+    visible: { 
+      x: 0, 
+      opacity: 1,
+      transition: { 
+        type: "spring",
+        stiffness: 400,
+        damping: 20,
+        mass: 1
+      }
+    }
+  };
+
+  // Content section animation - fade in with slight upward movement
+  const contentVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { 
+        type: "spring",
+        stiffness: 300,
+        damping: 25
+      }
+    }
+  };
+
+  // Education item animation - bounce in
+  const educationItemVariants = {
+    hidden: { scale: 0.9, opacity: 0 },
+    visible: { 
+      scale: 1, 
+      opacity: 1,
+      transition: { 
+        type: "spring",
+        stiffness: 250,
+        damping: 20,
+        mass: 1
+      }
+    }
+  };
+
+  // Award items animation - staggered appearance
+  const awardVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: (index) => ({ 
+      opacity: 1, 
+      x: 0,
+      transition: { 
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+        delay: index * 0.1
+      }
+    })
+  };
+
+  // Skills container animation
+  const skillsContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
   };
 
   return (
     <div className="text-gray-900">
       <motion.div
         className="container mx-auto px-4 py-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
         <div className="max-w-2xl mx-auto">
           <motion.h1
             className="text-2xl sm:text-3xl font-bold mb-4"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            variants={headingVariants}
           >
             About Me
           </motion.h1>
+          
           <motion.p
             className="mb-4 text-base text-gray-600"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            variants={contentVariants}
           >
             {information.About}
           </motion.p>
+          
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
+            variants={contentVariants}
           >
             <h2 className="text-lg font-semibold">Game Development</h2>
             <p className="mb-4 text-base text-gray-600">
               I started developing games on the ROBLOX platform and created my first successful game during quarantine in 2020 called AIMSTARS. I am proud to share that the game has amassed over 9 million plays and generated over $30,000 in revenue. AIMSTARS still has 15,000 monthly active users today!
             </p>
           </motion.div>
+          
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
+            variants={contentVariants}
           >
             <h2 className="text-lg font-semibold">Web Development</h2>
             <p className="mb-8 text-base text-gray-600">
               I also have a lot of experience in web development, participating in multiple hackathons, where I currently have 4 wins under my belt. These experiences have sharpened my skills and fostered my creativity in building innovative projects.
             </p>
           </motion.div>
+          
           <motion.h1
             className="text-2xl sm:text-3xl font-bold mb-4"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            variants={headingVariants}
           >
             Education
           </motion.h1>
@@ -74,9 +153,7 @@ const About = () => {
           {/* Education Item: UCI */}
           <motion.div
             className="flex flex-col sm:flex-row items-start mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
+            variants={educationItemVariants}
           >
             <img
               src={uci}
@@ -102,9 +179,7 @@ const About = () => {
           {/* Education Item: Mt. SAC */}
           <motion.div
             className="flex flex-col sm:flex-row items-start mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.0, duration: 0.6 }}
+            variants={educationItemVariants}
           >
             <img
               src={mtsac}
@@ -129,36 +204,33 @@ const About = () => {
 
           <motion.h1
             className="text-2xl sm:text-3xl font-bold mb-4"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            variants={headingVariants}
           >
             Awards
           </motion.h1>
-          <motion.div
-            className="mb-4 text-base text-gray-600 space-y-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
-          >
+          
+          <div className="mb-4 text-base text-gray-600 space-y-2">
             {information.Awards.map((award, index) => (
-              <p key={index}>🥇 {award}</p>
+              <motion.p 
+                key={index}
+                custom={index}
+                variants={awardVariants}
+              >
+                🥇 {award}
+              </motion.p>
             ))}
-          </motion.div>
+          </div>
 
           <motion.h1
             className="text-2xl sm:text-3xl font-bold mb-4"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            variants={headingVariants}
           >
             Skills
           </motion.h1>
+          
           <motion.div
             className="flex flex-wrap gap-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.4, duration: 0.6 }}
+            variants={skillsContainerVariants}
           >
             {[
               "React",
