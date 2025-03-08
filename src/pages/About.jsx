@@ -17,21 +17,21 @@ const About = () => {
     ]
   };
 
-  // Main container animation
+  // Main container animation - faster stagger
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
       transition: { 
         when: "beforeChildren",
-        staggerChildren: 0.1,
-        duration: 0.8, 
-        ease: "easeInOut" 
+        staggerChildren: 0.05, // Faster stagger time
+        duration: 0.4, // Reduced overall duration
+        ease: "easeOut" // Changed to easeOut for faster initial appearance
       }
     }
   };
 
-  // Heading animation - slide in from left with spring physics
+  // Heading animation - faster spring
   const headingVariants = {
     hidden: { x: -50, opacity: 0 },
     visible: { 
@@ -39,14 +39,14 @@ const About = () => {
       opacity: 1,
       transition: { 
         type: "spring",
-        stiffness: 400,
-        damping: 20,
-        mass: 1
+        stiffness: 500, // Higher stiffness for faster movement
+        damping: 15,  // Lower damping for quicker settling
+        mass: 0.8     // Lower mass for more responsive movement
       }
     }
   };
 
-  // Content section animation - fade in with slight upward movement
+  // Content section animation - faster spring
   const contentVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: { 
@@ -54,28 +54,29 @@ const About = () => {
       opacity: 1,
       transition: { 
         type: "spring",
-        stiffness: 300,
-        damping: 25
+        stiffness: 400, // Higher stiffness
+        damping: 20,    // Lower damping
+        duration: 0.3   // Explicit shorter duration
       }
     }
   };
 
-  // Education item animation - bounce in
+  // Education item animation - faster bounce
   const educationItemVariants = {
-    hidden: { scale: 0.9, opacity: 0 },
+    hidden: { scale: 0.95, opacity: 0 },
     visible: { 
       scale: 1, 
       opacity: 1,
       transition: { 
         type: "spring",
-        stiffness: 250,
-        damping: 20,
-        mass: 1
+        stiffness: 350, // Increased stiffness
+        damping: 15,    // Reduced damping
+        mass: 0.7       // Lower mass
       }
     }
   };
 
-  // Award items animation - staggered appearance
+  // Award items animation - faster staggered appearance
   const awardVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: (index) => ({ 
@@ -83,20 +84,20 @@ const About = () => {
       x: 0,
       transition: { 
         type: "spring",
-        stiffness: 300,
-        damping: 20,
-        delay: index * 0.1
+        stiffness: 400,
+        damping: 15,
+        delay: index * 0.03 // Much faster stagger between awards
       }
     })
   };
 
-  // Skills container animation
+  // Skills container animation - faster fade in
   const skillsContainerVariants = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
       transition: { 
-        duration: 0.5,
+        duration: 0.2, // Faster duration
         ease: "easeOut"
       }
     }

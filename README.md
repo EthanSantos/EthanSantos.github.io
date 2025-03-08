@@ -13,4 +13,4 @@ Check out my personal portfolio [website](https://ethansantos.github.io)!
 
 ## Contact
 
-Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/ethanmadeit)!
+Feel free to connect with me on [linkedin](https://www.linkedin.com/in/ethanmadeit)!
