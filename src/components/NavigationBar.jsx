@@ -9,20 +9,23 @@ const navItems = [
   { path: '/resume', label: 'resume' },
 ];
 
-// Enhanced item variants with initial loading animation
 const itemVariants = {
   hidden: { 
-    y: -20, 
-    opacity: 0 
+    y: -30, 
+    opacity: 0,
+    rotateX: -10
   },
   visible: (i) => ({ 
     y: 0, 
     opacity: 1,
+    rotateX: 0,
     transition: {
-      delay: i * 0.1,
+      delay: i * 0.08,
       type: "spring",
       stiffness: 300,
-      damping: 15,
+      damping: 6,
+      mass: 0.8,
+      velocity: 3
     }
   }),
   hover: { 
@@ -43,21 +46,23 @@ const itemVariants = {
   },
 };
 
-// Nav container initial load animation
 const containerVariants = {
   hidden: { 
-    y: -20, 
-    opacity: 0 
+    opacity: 0,
+    y: -20,
+    scale: 0.97
   },
   visible: { 
-    y: 0, 
     opacity: 1,
+    y: 0,
+    scale: 1,
     transition: {
       type: "spring",
-      stiffness: 300,
-      damping: 20,
-      staggerChildren: 0.1,
-      delayChildren: 0.2
+      stiffness: 250,
+      damping: 8,
+      mass: 1,
+      staggerChildren: 0.07,
+      delayChildren: 0.15
     }
   }
 };
