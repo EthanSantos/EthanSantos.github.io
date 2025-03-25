@@ -37,9 +37,9 @@ const ProfileCard = () => {
   // Container animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: 0.2,
         delayChildren: 0.2,
         duration: 0.5,
@@ -51,10 +51,10 @@ const ProfileCard = () => {
   // Profile pic animation variants
   const profilePicVariants = {
     hidden: { scale: 0.8, opacity: 0 },
-    visible: { 
-      scale: 1, 
+    visible: {
+      scale: 1,
       opacity: 1,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 300,
         damping: 15,
@@ -66,10 +66,10 @@ const ProfileCard = () => {
   // Text content animation variants
   const textVariants = {
     hidden: { opacity: 0, x: -10 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 300,
         damping: 20,
@@ -81,9 +81,9 @@ const ProfileCard = () => {
   // Social links container animation
   const socialsContainerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: 0.1,
         delayChildren: 0.6,
         duration: 0.5
@@ -94,10 +94,10 @@ const ProfileCard = () => {
   // Individual social link animation
   const socialItemVariants = {
     hidden: { opacity: 0, y: 10 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 300,
         damping: 20
@@ -107,18 +107,18 @@ const ProfileCard = () => {
 
   return (
     <motion.header
-      className="w-full bg-white overflow-x-hidden"
+      className="w-full bg-white overflow-x-hidden" // Added bottom padding
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      <div className="max-w-8xl mx-auto px-6 sm:px-12 md:px-24 lg:px-36 pt-12">
-        <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-8">
+      <div className="max-w-8xl mx-auto px-6 sm:px-12 md:px-24 lg:px-36 pt-12 pb-4"> {/* Added bottom padding */}
+        <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-8 pb-2"> {/* Added bottom padding */}
           {/* Image and Text Container */}
           <div className="flex flex-col sm:flex-row items-center gap-6">
-            {/* Profile Picture with bounce animation */}
-            <motion.div 
-              className="shrink-0"
+            {/* Profile Picture with bounce animation and status indicator */}
+            <motion.div
+              className="shrink-0 relative pb-2 pr-2" // Smaller padding on the profile pic container
               variants={profilePicVariants}
             >
               <div className="w-28 h-28 rounded-lg overflow-hidden">
@@ -129,10 +129,18 @@ const ProfileCard = () => {
                   loading="lazy"
                 />
               </div>
+
+              {/* Online status indicator */}
+              <div
+                className="absolute bottom-1 right-1 bg-green-500 w-5 h-5 rounded-full border-2 border-white flex items-center justify-center z-10"
+                title="Online and available"
+              >
+                <div className="w-2 h-2 bg-white rounded-full"></div>
+              </div>
             </motion.div>
-            
+
             {/* Text Content with slide-in animation */}
-            <motion.div 
+            <motion.div
               className="text-center sm:text-left flex flex-col justify-center"
               variants={textVariants}
             >
@@ -147,7 +155,7 @@ const ProfileCard = () => {
           </div>
 
           {/* Social Links with staggered animation */}
-          <motion.div 
+          <motion.div
             className="flex gap-6"
             variants={socialsContainerVariants}
           >
@@ -178,8 +186,8 @@ const SocialLink = ({ href, icon, label, className = '', variants }) => {
       aria-label={label}
       className={`text-gray-500 transition-colors duration-200 ${className}`}
       variants={variants}
-      whileHover={{ 
-        scale: 1.2, 
+      whileHover={{
+        scale: 1.2,
         rotate: 5,
         transition: { type: "spring", stiffness: 400, damping: 10 }
       }}
