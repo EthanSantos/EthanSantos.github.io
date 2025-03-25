@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Pill from '../components/Pill';
 import uci from '../assets/uci.png';
 import mtsac from '../assets/mtsac.png';
+import GitHubCalendar from 'react-github-calendar';
 
 const About = () => {
   const information = {
@@ -20,9 +21,9 @@ const About = () => {
   // Main container animation - faster stagger
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         when: "beforeChildren",
         staggerChildren: 0.05, // Faster stagger time
         duration: 0.4, // Reduced overall duration
@@ -34,10 +35,10 @@ const About = () => {
   // Heading animation - faster spring
   const headingVariants = {
     hidden: { x: -50, opacity: 0 },
-    visible: { 
-      x: 0, 
+    visible: {
+      x: 0,
       opacity: 1,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 500, // Higher stiffness for faster movement
         damping: 15,  // Lower damping for quicker settling
@@ -49,10 +50,10 @@ const About = () => {
   // Content section animation - faster spring
   const contentVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 400, // Higher stiffness
         damping: 20,    // Lower damping
@@ -64,10 +65,10 @@ const About = () => {
   // Education item animation - faster bounce
   const educationItemVariants = {
     hidden: { scale: 0.95, opacity: 0 },
-    visible: { 
-      scale: 1, 
+    visible: {
+      scale: 1,
       opacity: 1,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 350, // Increased stiffness
         damping: 15,    // Reduced damping
@@ -79,10 +80,10 @@ const About = () => {
   // Award items animation - faster staggered appearance
   const awardVariants = {
     hidden: { opacity: 0, x: -20 },
-    visible: (index) => ({ 
-      opacity: 1, 
+    visible: (index) => ({
+      opacity: 1,
       x: 0,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 400,
         damping: 15,
@@ -94,9 +95,9 @@ const About = () => {
   // Skills container animation - faster fade in
   const skillsContainerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         duration: 0.2, // Faster duration
         ease: "easeOut"
       }
@@ -118,14 +119,14 @@ const About = () => {
           >
             About Me
           </motion.h1>
-          
+
           <motion.p
             className="mb-4 text-base text-gray-600"
             variants={contentVariants}
           >
             {information.About}
           </motion.p>
-          
+
           <motion.div
             variants={contentVariants}
           >
@@ -134,7 +135,7 @@ const About = () => {
               I started developing games on the ROBLOX platform and created my first successful game during quarantine in 2020 called AIMSTARS. I am proud to share that the game has amassed over 9 million plays and generated over $30,000 in revenue. AIMSTARS still has 15,000 monthly active users today!
             </p>
           </motion.div>
-          
+
           <motion.div
             variants={contentVariants}
           >
@@ -143,7 +144,7 @@ const About = () => {
               I also have a lot of experience in web development, participating in multiple hackathons, where I currently have 4 wins under my belt. These experiences have sharpened my skills and fostered my creativity in building innovative projects.
             </p>
           </motion.div>
-          
+
           <motion.h1
             className="text-2xl sm:text-3xl font-bold mb-4"
             variants={headingVariants}
@@ -209,10 +210,10 @@ const About = () => {
           >
             Awards
           </motion.h1>
-          
+
           <div className="mb-4 text-base text-gray-600 space-y-2">
             {information.Awards.map((award, index) => (
-              <motion.p 
+              <motion.p
                 key={index}
                 custom={index}
                 variants={awardVariants}
@@ -228,7 +229,7 @@ const About = () => {
           >
             Skills
           </motion.h1>
-          
+
           <motion.div
             className="flex flex-wrap gap-2"
             variants={skillsContainerVariants}
@@ -259,6 +260,55 @@ const About = () => {
             ))}
           </motion.div>
         </div>
+        <motion.div
+          className="mt-10 pt-8 border-t border-gray-200 max-w-2xl mx-auto"
+          variants={contentVariants}
+        >
+          <motion.h1
+            className="text-2xl sm:text-3xl font-bold mb-4"
+            variants={headingVariants}
+          >
+            GitHub
+          </motion.h1>
+
+          <div
+            className="overflow-x-auto bg-white rounded-lg shadow-sm p-4 border border-gray-100 cursor-pointer"
+            onClick={() => window.open('https://github.com/EthanSantos', '_blank')}
+          >
+            <GitHubCalendar
+              username="ethansantos"
+              year={new Date().getFullYear()}
+              colorScheme="light"
+              hideColorLegend={false}
+              hideMonthLabels={false}
+              blockSize={12}
+              blockMargin={4}
+              fontSize={12}
+              labels={{
+                totalCount: '{{count}} contributions in {{year}}'
+              }}
+              renderLoading={() => (
+                <div className="flex justify-center items-center py-8">
+                  <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-blue-500"></div>
+                  <span className="ml-3 text-gray-600">Loading activity data...</span>
+                </div>
+              )}
+              renderError={(error) => (
+                <div className="text-center py-6 text-red-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <p>Could not load GitHub contribution data</p>
+                  <p className="text-sm mt-1 text-gray-600">Please check your connection and try again</p>
+                </div>
+              )}
+            />
+          </div>
+
+          <div className="mt-4 mb-2 text-sm text-center text-gray-500">
+            Click on the calendar to view more details on GitHub
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );
