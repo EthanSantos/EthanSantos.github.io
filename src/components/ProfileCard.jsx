@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import profilePic from '../assets/ProfilePic.png';
@@ -33,7 +33,37 @@ const socialLinks = [
   },
 ];
 
+// Add status options
+const statusOptions = [
+  { id: 'online', label: 'Online', color: 'bg-green-500' },
+  { id: 'idle', label: 'Idle', color: 'bg-yellow-500' },
+  { id: 'busy', label: 'Busy', color: 'bg-red-500' },
+  { id: 'offline', label: 'Offline', color: 'bg-gray-500' }
+];
+
 const ProfileCard = () => {
+  // Add state for status and dropdown visibility
+  const [status, setStatus] = useState('online');
+  const [showStatusDropdown, setShowStatusDropdown] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowStatusDropdown(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Get current status object
+  const currentStatus = statusOptions.find(option => option.id === status);
+
   // Container animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -107,18 +137,18 @@ const ProfileCard = () => {
 
   return (
     <motion.header
-      className="w-full bg-white overflow-x-hidden" // Added bottom padding
+      className="w-full bg-white overflow-x-hidden"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      <div className="max-w-8xl mx-auto px-6 sm:px-12 md:px-24 lg:px-36 pt-12 pb-4"> {/* Added bottom padding */}
-        <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-8 pb-2"> {/* Added bottom padding */}
+      <div className="max-w-8xl mx-auto px-6 sm:px-12 md:px-24 lg:px-36 pt-12 pb-4">
+        <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-8 pb-2">
           {/* Image and Text Container */}
           <div className="flex flex-col sm:flex-row items-center gap-6">
             {/* Profile Picture with bounce animation and status indicator */}
             <motion.div
-              className="shrink-0 relative pb-2 pr-2" // Smaller padding on the profile pic container
+              className="shrink-0 relative"
               variants={profilePicVariants}
             >
               <div className="w-28 h-28 rounded-lg overflow-hidden">
@@ -130,16 +160,42 @@ const ProfileCard = () => {
                 />
               </div>
 
-              {/* Online status indicator */}
-              <div
-                className="absolute bottom-1 right-1 bg-green-500 w-5 h-5 rounded-full border-2 border-white flex items-center justify-center z-10"
-                title="Online and available"
-              >
-                <div className="w-2 h-2 bg-white rounded-full"></div>
+              <div className="absolute bottom-0 right-0">
+                <button
+                  className={`${currentStatus.color} w-8 h-8 rounded-full border-4 border-white flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity translate-x-1/4 translate-y-1/4`}
+                  onClick={() => setShowStatusDropdown(!showStatusDropdown)}
+                  aria-label="Change status"
+                >
+                  {status === 'online' && <div className="w-3 h-3 bg-white rounded-full"></div>}
+                  {status === 'idle' && <div className="w-4 h-4 bg-white rounded-full flex items-center justify-center"><div className="w-3 h-3 bg-yellow-500 rounded-full"></div></div>}
+                  {status === 'busy' && <div className="w-3.5 h-0.5 bg-white rounded-full"></div>}
+                  {status === 'offline' && <div className="w-3 h-3 bg-white rounded-full opacity-0"></div>}
+                </button>
+
+                {/* Status dropdown */}
+                {showStatusDropdown && (
+                  <div
+                    ref={dropdownRef}
+                    className="absolute bottom-0 left-full ml-3 bg-white shadow-lg rounded-md py-1 z-20 w-28"
+                  >
+                    {statusOptions.map(option => (
+                      <button
+                        key={option.id}
+                        className="flex items-center w-full px-3 py-1.5 text-xs text-left hover:bg-gray-100 transition-colors"
+                        onClick={() => {
+                          setStatus(option.id);
+                          setShowStatusDropdown(false);
+                        }}
+                      >
+                        <span className={`${option.color} w-2 h-2 rounded-full mr-2`}></span>
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
 
-            {/* Text Content with slide-in animation */}
             <motion.div
               className="text-center sm:text-left flex flex-col justify-center"
               variants={textVariants}
