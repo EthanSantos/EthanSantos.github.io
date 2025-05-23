@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import Pill from '../components/Pill';
 import uci from '../assets/uci.png';
 import mtsac from '../assets/mtsac.png';
-import GitHubCalendar from 'react-github-calendar';
 import GithubCard from '../components/GithubCard';
 
 const About = () => {
@@ -11,6 +10,7 @@ const About = () => {
     About:
       "I'm a Computer Science major at University of California, Irvine with a deep passion for web development and game development. My programming journey began in late 2016, and since then, I have grown my skills and expertise across various technologies. In my free time, I love exercising daily - whether that's going to the gym, playing basketball or hiking with my friends. I also love cars, reading books, and playing chess.",
     Awards: [
+      "1st place - LA Hacks, Roblox Company Challenge ($2,000 prize), 2025",
       "1st place - Coinbase Onchain Summer Buildathon ($10,000 prize), 2024",
       "1st place - UCR BearHacks (Best Startup), 2024",
       "1st place - Best User Experience Award at Roblox x USC Game Jam ($1000 prize), 2024",

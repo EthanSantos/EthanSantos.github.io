@@ -8,19 +8,19 @@ import mtsac from '../assets/mtsac.png';
 import Amway from '../assets/Amway.png'
 
 export const experiences = [
-  /*
+  
   {
-    title: "Incoming Software Engineer Intern",
+    title: "Software Engineer Intern",
     company: "Amway",
-    date: "May. 2025 – Aug. 2025",
+    date: "May. 2025 – Present",
     location: "Ada, MI",
     description: `
-      Will be working on the Amway ID team as a Software Engineer.
+      Will be working on the Amway Identity team as a Software Engineer.
     `,
     logo: Amway,
-    technologies: ["Node.js", "TypeScript", "Next.js", "Kafka", "Splunk"],
+    technologies: ["Node.js", "TypeScript", "Fastify", "Prometheus", "Grafana", "Kafka", "Splunk"],
   },
-  */
+  
 
   {
     title: "Software Engineer Intern",
