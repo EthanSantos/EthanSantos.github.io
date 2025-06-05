@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Menu, X } from '@heroicons/react/24/outline';
 
 const navItems = [
   { path: '/about', label: 'about' },
@@ -69,6 +70,7 @@ const containerVariants = {
 
 const NavigationBar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     let ticking = false;
@@ -96,20 +98,37 @@ const NavigationBar = () => {
     ${isActive ? 'font-bold text-black' : 'font-normal text-gray-600 hover:text-black'}
   `;
 
-  const handleNavClick = () =>
+  const handleNavClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
     <div className={navContainerClass}>
       <motion.nav
         role="navigation"
         aria-label="Main Navigation"
-        className="max-w-2xl mx-auto px-3"
+        className="max-w-2xl mx-auto px-3 relative"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <motion.ul className="flex justify-evenly items-center space-x-6">
+        <div className="flex justify-end sm:hidden">
+          <button
+            onClick={toggleMenu}
+            aria-label="Toggle Navigation"
+            className="p-2 rounded focus:outline-none"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+        <motion.ul
+          className={`${
+            isMenuOpen ? 'block' : 'hidden'
+          } sm:flex justify-evenly items-center flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 mt-4 sm:mt-0`}
+        >
           {navItems.map((item, i) => (
             <motion.li
               key={item.label}

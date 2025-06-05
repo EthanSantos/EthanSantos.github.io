@@ -5,7 +5,7 @@ const Resume = () => {
     const googleDriveLink = "https://drive.google.com/file/d/1ZFYD-DLjTA_5QU93T88OYc57Ez0EK_GK/view?usp=sharing";
 
     return (
-        <div className="w-full h-[calc(100vh-100px)] flex flex-col justify-start items-center p-24">
+        <div className="w-full min-h-[calc(100svh-100px)] flex flex-col justify-start items-center p-6 sm:p-24">
             {/* Display link for mobile */}
             <div className="block sm:hidden text-center mb-4">
                 <a

@@ -14,3 +14,7 @@ Check out my personal portfolio [website](https://ethansantos.github.io)!
 ## Contact
 
 Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/ethanmadeit)!
+
+## Mobile Support
+
+The navigation menu now adapts to smaller screens with a toggleable menu and the resume page avoids fixed viewport heights for better mobile compatibility.
