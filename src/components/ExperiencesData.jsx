@@ -15,10 +15,10 @@ export const experiences = [
     date: "May. 2025 – Present",
     location: "Ada, MI",
     description: `
-      Will be working on the Amway Identity team as a Software Engineer.
+      Working on the Amway ID global authentication and authorization team as a Software Engineer.
     `,
     logo: Amway,
-    technologies: ["Node.js", "TypeScript", "Fastify", "Prometheus", "Grafana", "Kafka", "Splunk"],
+    technologies: ["Node.js", "TypeScript", "Fastify", "Prometheus", "Grafana", "Playwright", "Kafka", "Splunk"],
   },
   
 
