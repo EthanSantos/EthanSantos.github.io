@@ -92,24 +92,25 @@ const NavigationBar = () => {
   `;
 
   const linkClass = ({ isActive }) => `
-    relative px-4 py-2 text-base transition-colors duration-300 ease-in-out
+    relative px-3 sm:px-4 py-2 text-sm sm:text-base transition-colors duration-300 ease-in-out
     ${isActive ? 'font-bold text-black' : 'font-normal text-gray-600 hover:text-black'}
   `;
 
-  const handleNavClick = () =>
+  const handleNavClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className={navContainerClass}>
       <motion.nav
         role="navigation"
         aria-label="Main Navigation"
-        className="max-w-2xl mx-auto px-3"
+        className="max-w-2xl mx-auto px-3 relative"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <motion.ul className="flex justify-evenly items-center space-x-6">
+        <motion.ul className="flex justify-evenly items-center space-x-2 sm:space-x-6">
           {navItems.map((item, i) => (
             <motion.li
               key={item.label}
