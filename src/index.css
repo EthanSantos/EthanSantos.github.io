@@ -1,3 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  /* Light theme tokens */
+  --bg-primary: #ffffff; /* white */
+  --bg-surface: #f3f4f6; /* gray-100 */
+  --text-primary: #111827; /* gray-900 */
+  --text-secondary: #4b5563; /* gray-600 */
+  --accent: #3b82f6; /* blue-500 */
+
+  @apply text-[color:var(--text-primary)];
+}
+
+body {
+  @apply transition-colors duration-300 ease-in-out;
+  background-color: var(--bg-primary);
+}
+
+@layer utilities {
+  /* Dark theme overrides */
+  html.dark {
+    --bg-primary: #1a1a1a; /* darker dark base */
+    --bg-surface: #242424;
+    --text-primary: #D7DADC; /* discord muted text */
+    --text-secondary: #9ca3af; /* gray-400 */
+    --accent: #60a5fa; /* blue-400 */
+    --border-color: #333333; /* subtle but visible line */
+  }
+
+  html.dark body, html.dark p:not(.date-text), html.dark li, html.dark span, html.dark div {
+    color: var(--text-primary);
+  }
+
+  html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+    color: #ffffff;
+  }
+
+  a {
+    color: var(--accent);
+  }
+
+  /* Smooth global color transition when toggling theme */
+  .theme-transition,
+  .theme-transition * {
+    transition-property: background-color, color, border-color, fill, stroke;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  /* --- Universal dark-mode overrides for Tailwind default classes --- */
+  html.dark .bg-white,
+  html.dark .bg-gray-100 {
+    background-color: var(--bg-surface) !important;
+  }
+
+  html.dark .text-black {
+    color: #ffffff !important;
+  }
+
+  html.dark .text-gray-900,
+  html.dark .text-gray-800,
+  html.dark .text-gray-700,
+  html.dark .text-gray-600,
+  html.dark .text-gray-500,
+  html.dark .text-gray-400 {
+    color: var(--text-primary) !important;
+  }
+
+  /* Override for date text in dark mode */
+  html.dark .experience-date {
+    color: #9ca3af !important;
+  }
+
+  html.dark .border-gray-300,
+  html.dark .border-gray-200,
+  html.dark .border-gray-100 {
+    border-color: var(--border-color) !important;
+  }
+
+  html.dark .hover\:bg-gray-300:hover {
+    background-color: rgba(255,255,255,0.1) !important;
+  }
+
+  /* Borders for GitHub contribution squares */
+  .ContributionCalendar-day {
+    shape-rendering: crispEdges;
+  }
+  html:not(.dark) .ContributionCalendar-day {
+    stroke: #d1d5db;
+    stroke-width: 1px;
+  }
+  html.dark .ContributionCalendar-day {
+    stroke: var(--border-color);
+    stroke-width: 1px;
+  }
+}

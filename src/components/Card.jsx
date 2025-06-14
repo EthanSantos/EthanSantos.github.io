@@ -16,7 +16,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
 
   return (
     <motion.div
-      className="relative flex flex-col md:flex-row w-full max-w-[80rem] rounded-xl bg-white bg-clip-border text-gray-700"
+      className="relative flex flex-col md:flex-row w-full max-w-[80rem] rounded-xl bg-white dark:bg-[#313338] bg-clip-border text-gray-700 dark:text-gray-100"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{
@@ -29,7 +29,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
       }}
     >
       <motion.div
-        className="relative m-0 overflow-hidden rounded-t-xl md:rounded-r-none md:rounded-l-xl bg-white bg-clip-border text-gray-700 aspect-w-16 aspect-h-9 md:aspect-w-40 md:aspect-h-10 w-full md:w-1/2"
+        className="relative m-0 overflow-hidden rounded-t-xl md:rounded-r-none md:rounded-l-xl bg-white dark:bg-[#1e1f22] bg-clip-border text-gray-700 dark:text-gray-100 aspect-w-16 aspect-h-9 md:aspect-w-40 md:aspect-h-10 w-full md:w-1/2"
         initial={{ x: -20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.4, ease: 'easeOut' }}
@@ -53,7 +53,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
       </motion.div>
       <div className="p-4 md:p-6 flex flex-col w-full md:w-1/2 relative">
         <motion.h6
-          className="mb-2 md:mb-4 text-base md:text-lg font-semibold uppercase leading-relaxed tracking-normal text-black antialiased text-left"
+          className="mb-2 md:mb-4 text-base md:text-lg font-semibold uppercase leading-relaxed tracking-normal text-black dark:text-gray-100 antialiased text-left"
           initial={{ x: -10, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.4, ease: 'easeOut' }}
@@ -61,7 +61,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
           {title}
         </motion.h6>
         <motion.p
-          className="mb-4 text-sm md:text-base font-normal leading-relaxed text-gray-500 antialiased text-left"
+          className="mb-4 text-sm md:text-base font-normal leading-relaxed text-gray-500 dark:text-gray-300 antialiased text-left"
           dangerouslySetInnerHTML={{ __html: description }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -80,7 +80,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
                 href={githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-bold uppercase text-gray-700 cursor-pointer"
+                className="flex items-center gap-2 text-xs font-bold uppercase text-gray-700 dark:text-gray-100 cursor-pointer"
                 whileHover={{ opacity: 0.8 }}
                 transition={{ duration: 0.2, ease: 'easeOut' }}
               >
@@ -92,7 +92,7 @@ const Card = ({ imageSrc, title, skills, description, isVideo, link, githubLink 
           <motion.button
             type="button"
             onClick={handleLearnMore}
-            className="flex items-center gap-2 text-xs font-bold uppercase text-gray-700 cursor-pointer"
+            className="flex items-center gap-2 text-xs font-bold uppercase text-gray-700 dark:text-gray-100 cursor-pointer"
             whileHover={{ opacity: 0.8 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
           >

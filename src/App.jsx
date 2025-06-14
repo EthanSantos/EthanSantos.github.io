@@ -14,7 +14,7 @@ import PharmaScan from './pages/ProjectArticle/Pharmascan';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-white dark:bg-[#2b2d31] transition-colors duration-300">
         <div className="flex-grow">
           <ProfileCard />
           <NavigationBar />

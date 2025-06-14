@@ -2,6 +2,8 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import useDarkMode from '../hooks/useDarkMode';
 
 // Container animation variants for mount and exit
 const containerVariants = {
@@ -75,6 +77,7 @@ const ParallaxImage = ({ src, alt, caption }) => {
 
 const BlogArticle = ({ title, author, date, content }) => {
   const navigate = useNavigate();
+  const [isDark] = useDarkMode();
 
   // Render each content block with minimal scroll-triggered animations.
   const renderContentBlock = (block, index) => {
@@ -146,7 +149,11 @@ const BlogArticle = ({ title, author, date, content }) => {
             viewport={{ once: true, amount: 0.5 }}
             variants={itemVariants}
           >
-            <SyntaxHighlighter language={block.language || 'javascript'} style={block.style}>
+            <SyntaxHighlighter 
+              language={block.language || 'javascript'} 
+              style={isDark ? vscDarkPlus : block.style}
+              className="rounded-lg"
+            >
               {block.value}
             </SyntaxHighlighter>
           </motion.div>
@@ -167,7 +174,7 @@ const BlogArticle = ({ title, author, date, content }) => {
       {/* Back Button with a minimal hover effect */}
       <motion.button
         onClick={() => navigate('/projects')}
-        className="mb-6 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-lg transition-all"
+        className="mb-6 px-4 py-2 bg-gray-200 dark:bg-[#313338] hover:bg-gray-300 dark:hover:bg-[#3a3c41] text-gray-800 dark:text-gray-100 text-sm font-medium rounded-lg transition-all"
         variants={itemVariants}
         whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
         whileTap={{ scale: 0.95 }}

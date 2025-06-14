@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import profilePic from '../assets/ProfilePic.png';
+import ThemeToggle from './ThemeToggle';
 
 // Array of social links
 const socialLinks = [
@@ -137,12 +138,16 @@ const ProfileCard = () => {
 
   return (
     <motion.header
-      className="w-full bg-white overflow-x-hidden"
+      className="w-full bg-white dark:bg-[var(--bg-primary)] overflow-x-hidden relative"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
       <div className="max-w-8xl mx-auto px-6 sm:px-12 md:px-24 lg:px-36 pt-12 pb-4">
+        {/* Theme toggle button */}
+        <div className="absolute top-4 right-4">
+          <ThemeToggle />
+        </div>
         <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-8 pb-2">
           {/* Image and Text Container */}
           <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -162,7 +167,12 @@ const ProfileCard = () => {
 
               <div className="absolute bottom-0 right-0">
                 <button
-                  className={`${currentStatus.color} w-8 h-8 rounded-full border-4 border-white flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity translate-x-1/4 translate-y-1/4`}
+                  className={`${currentStatus.color} w-8 h-8 rounded-full border-4 border-white dark:border-[#242424] flex items-center justify-center cursor-pointer 
+                  transform hover:scale-110 active:scale-95 transition-all duration-200 
+                  shadow-lg hover:shadow-xl 
+                  translate-x-1/4 translate-y-1/4
+                  before:absolute before:inset-0 before:rounded-full before:bg-white/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity
+                  after:absolute after:inset-0 after:rounded-full after:bg-black/5 dark:after:bg-white/5 after:opacity-0 hover:after:opacity-100 after:transition-opacity`}
                   onClick={() => setShowStatusDropdown(!showStatusDropdown)}
                   aria-label="Change status"
                 >
@@ -200,11 +210,11 @@ const ProfileCard = () => {
               className="text-center sm:text-left flex flex-col justify-center"
               variants={textVariants}
             >
-              <h1 className="text-2xl font-bold text-gray-900 mb-1 leading-none">
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1 leading-none">
                 Ethan Santos
               </h1>
-              <p className="text-gray-600 mb-1 text-base leading-snug">Computer Science Major</p>
-              <p className="text-gray-500 text-base leading-snug">
+              <p className="text-gray-600 dark:text-gray-300 mb-1 text-base leading-snug">Computer Science Major</p>
+              <p className="text-gray-500 dark:text-gray-400 text-base leading-snug">
                 University of California, Irvine
               </p>
             </motion.div>
