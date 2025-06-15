@@ -29,6 +29,11 @@ body {
     --border-color: #333333; /* subtle but visible line */
   }
 
+  /* Force the name to be white in dark mode */
+  html.dark .profile-name {
+    color: #ffffff !important;
+  }
+
   html.dark body, html.dark p:not(.date-text), html.dark li, html.dark span, html.dark div {
     color: var(--text-primary);
   }

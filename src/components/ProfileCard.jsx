@@ -169,7 +169,6 @@ const ProfileCard = () => {
                 <button
                   className={`${currentStatus.color} w-8 h-8 rounded-full border-4 border-white dark:border-[#242424] flex items-center justify-center cursor-pointer 
                   transform hover:scale-110 active:scale-95 transition-all duration-200 
-                  shadow-lg hover:shadow-xl 
                   translate-x-1/4 translate-y-1/4
                   before:absolute before:inset-0 before:rounded-full before:bg-white/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity
                   after:absolute after:inset-0 after:rounded-full after:bg-black/5 dark:after:bg-white/5 after:opacity-0 hover:after:opacity-100 after:transition-opacity`}
@@ -210,11 +209,11 @@ const ProfileCard = () => {
               className="text-center sm:text-left flex flex-col justify-center"
               variants={textVariants}
             >
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1 leading-none">
+              <h1 className="text-2xl font-bold dark:text-white mb-1 leading-none">
                 Ethan Santos
               </h1>
               <p className="text-gray-600 dark:text-gray-300 mb-1 text-base leading-snug">Computer Science Major</p>
-              <p className="text-gray-500 dark:text-gray-400 text-base leading-snug">
+              <p className="text-gray-500 dark:text-gray-200 text-base leading-snug">
                 University of California, Irvine
               </p>
             </motion.div>
