@@ -133,7 +133,7 @@ const About = () => {
           >
             <h2 className="text-lg font-semibold">Game Development</h2>
             <p className="mb-4 text-base text-gray-600">
-              I started developing games on the ROBLOX platform and created my first successful game during quarantine in 2020 called AIMSTARS. I am proud to share that the game has amassed over 9 million plays and generated over $30,000 in revenue. AIMSTARS still has 15,000 monthly active users today!
+              I started developing games on the ROBLOX platform and created my first successful game during quarantine in 2020 called AIMSTARS. I am proud to share that the game has amassed over 9.5 million plays and generated over $30,000 in revenue. AIMSTARS still has 15,000 monthly active users today!
             </p>
           </motion.div>
 
@@ -142,7 +142,7 @@ const About = () => {
           >
             <h2 className="text-lg font-semibold">Web Development</h2>
             <p className="mb-8 text-base text-gray-600">
-              I also have a lot of experience in web development, participating in multiple hackathons, where I currently have 4 wins under my belt. These experiences have sharpened my skills and fostered my creativity in building innovative projects.
+              I also have a lot of experience in web development, participating in multiple hackathons, where I currently have 5 wins under my belt. These experiences have sharpened my skills and fostered my creativity in building innovative projects.
             </p>
           </motion.div>
 

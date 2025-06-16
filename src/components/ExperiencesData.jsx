@@ -83,7 +83,7 @@ export const experiences = [
     date: "Jun. 2020 – Mar. 2024",
     location: "Remote",
     description: `
-        I developed AIMSTARS, a first-person shooter aim training game on Roblox, amassing over 9 million plays and 15,000 monthly active users, generating $30,000 in revenue. I coded the game in Lua, managing all aspects of production, including 3D modeling and UI design. I implemented bots with human-like movement using the Pathfinding service, developed a global leaderboard with ProfileService, and added a multiplayer mode that increased engagement by 40%. Additionally, I utilized MarketplaceService to create in-game products, significantly boosting the game's revenue.
+        I developed AIMSTARS, a first-person shooter aim training game on Roblox, amassing over 9.5 million plays and 15,000 monthly active users, generating $30,000 in revenue. I coded the game in Lua, managing all aspects of production, including 3D modeling and UI design. I implemented bots with human-like movement using the Pathfinding service, developed a global leaderboard with ProfileService, and added a multiplayer mode that increased engagement by 40%. Additionally, I utilized MarketplaceService to create in-game products, significantly boosting the game's revenue.
       `,
     logo: "https://tr.rbxcdn.com/ca184ff37987fb414f2c8ad4d0bbd0a8/150/150/Image/Webp",
     technologies: ["Lua", "Roblox Studio", "Git"],
