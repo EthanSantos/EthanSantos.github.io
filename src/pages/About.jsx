@@ -15,7 +15,6 @@ const About = () => {
       "1st place - UCR BearHacks (Best Startup), 2024",
       "1st place - Best User Experience Award at Roblox x USC Game Jam ($1000 prize), 2024",
       "Dean's Honors List",
-      "Mount San Antonio College Honors Program"
     ]
   };
 
@@ -175,32 +174,6 @@ const About = () => {
                   Bachelor of Science in Computer Science
                 </p>
                 <p className="text-sm">Irvine, CA</p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Education Item: Mt. SAC */}
-          <motion.div
-            className="flex flex-col sm:flex-row items-start mb-4"
-            variants={educationItemVariants}
-          >
-            <img
-              src={mtsac}
-              alt="MtSac Icon"
-              className="w-12 h-12 mb-2 sm:mb-0 sm:mr-4"
-            />
-            <div className="flex-1">
-              <div className="flex flex-col sm:flex-row sm:justify-between items-start">
-                <h2 className="text-lg font-semibold">
-                  Mount San Antonio College
-                </h2>
-                <p className="text-base">Aug. 2021 – June 2023</p>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:justify-between items-start">
-                <p className="text-base text-gray-600">
-                  Computer Science Transfer
-                </p>
-                <p className="text-sm">Walnut, CA</p>
               </div>
             </div>
           </motion.div>
