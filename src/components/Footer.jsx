@@ -10,7 +10,7 @@ const Footer = () => {
                         COPYRIGHT © {new Date().getFullYear()} ETHAN SANTOS. ALL RIGHTS RESERVED.
                     </p>
                     <p className="text-xs text-gray-400 dark:text-gray-500 mt-2 md:mt-0 text-center md:text-right">
-                        Built with React, TailwindCSS and ❤️
+                        BUILT WITH REACT, TAILWINDCSS AND ❤️
                     </p>
                 </div>
             </div>
