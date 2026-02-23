@@ -8,7 +8,6 @@ import Resume from './pages/Resume';
 import Experience from './pages/Experience';
 import NotFound from './pages/NotFound';
 
-import Aimstars from './pages/ProjectArticle/Aimstars';
 import PharmaScan from './pages/ProjectArticle/Pharmascan';
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
               <Route path="/experience" element={<Experience />} />
               <Route path="*" element={<NotFound />} />
 
-              <Route path="/projects/aimstars" element={<Aimstars />} />
               <Route path="/projects/pharmascan" element={<PharmaScan />} />
             </Routes>
           </main>

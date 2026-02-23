@@ -46,17 +46,6 @@ const Projects = () => {
     >
       <motion.div variants={cardVariants}>
         <Card
-          imageSrc={"https://www.youtube.com/embed/W1Ry2lBVVzo"}
-          title={"AIMSTARS"}
-          skills={[{ text: "Lua" }, { text: "Roblox Studio" }, { text: "Git" }]}
-          description={"In 2020, I developed <strong>AIMSTARS</strong>, a first-person shooter aim training game on <strong>Roblox</strong>, which became my most successful project with over <strong>9.2 million plays</strong>, <strong>15,000 monthly active users</strong>, and <strong>$30,000 in revenue</strong>. I coded the game in <strong>Lua</strong>, handling all aspects of production, including 3D modeling and UI design. Key features included sophisticated bots with human-like movement patterns, a global leaderboard system, and a multiplayer mode that boosted engagement by <strong>40%</strong>. I also created in-game products that contributed significantly to revenue and actively marketed the game through trailers and ads. This multi-year project honed my programming skills and deepened my understanding of game development, marketing, and user engagement."}
-          isVideo={true}
-          link="/projects/aimstars"
-        />
-      </motion.div>
-      
-      <motion.div variants={cardVariants}>
-        <Card
           imageSrc={pyroAI}
           title={"Pyro.AI"}
           skills={[
@@ -111,15 +100,6 @@ const Projects = () => {
         />
       </motion.div>
       
-      <motion.div variants={cardVariants}>
-        <Card
-          imageSrc={"https://tr.rbxcdn.com/180DAY-f64d1ed8f77ce6a28d3c57ed20aa080b/768/432/Image/Webp/noFilter"}
-          title={"Guess the Build"}
-          skills={[{ text: "Lua" }, { text: "Roblox Studio" }, { text: "Git" }]}
-          description={"I developed a multiplayer guessing game on <strong>Roblox</strong>, achieving over <strong>150,000 plays</strong> worldwide, where players guess items constructed by an assigned builder. Utilizing <strong>Roblox Raycasting</strong>, I implemented a dynamic block-building system for precise and interactive gameplay. To handle player data and leaderboards, I used <strong>ProfileService</strong>, ensuring secure and reliable data storage. The game features an in-game shop system managed through <strong>MarketplaceService</strong>, contributing to a revenue of <strong>$3,000</strong>. Additionally, I enhanced player engagement by incorporating daily rewards and a feedback system connected via <strong>Discord webhooks</strong>, allowing direct player communication and continual game improvement based on user input."}
-          link="/guess-the-build"
-        />
-      </motion.div>
     </motion.div>
   )
 }

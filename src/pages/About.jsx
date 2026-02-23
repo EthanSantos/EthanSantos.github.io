@@ -8,12 +8,11 @@ import GithubCard from '../components/GithubCard';
 const About = () => {
   const information = {
     About:
-      "I'm a Computer Science major at the University of California, Irvine with a deep passion for web development and game development. My programming journey began in late 2016, and since then, I have grown my skills and expertise across various technologies. In my free time, I love exercising daily - whether that's going to the gym, playing basketball or hiking with my friends. I also love cars, reading books, and playing chess.",
+      "I'm a Computer Science major at the University of California, Irvine with a deep passion for web development. My programming journey began in late 2016, and since then, I have grown my skills and expertise across various technologies. In my free time, I love exercising daily - whether that's going to the gym, playing basketball or hiking with my friends. I also love cars, reading books, and playing chess.",
     Awards: [
       "1st place - LA Hacks, Roblox Company Challenge ($2,000 prize), 2025",
       "1st place - Coinbase Onchain Summer Buildathon ($10,000 prize), 2024",
       "1st place - UCR BearHacks (Best Startup), 2024",
-      "1st place - Best User Experience Award at Roblox x USC Game Jam ($1000 prize), 2024",
       "Dean's Honors List",
     ]
   };
@@ -126,15 +125,6 @@ const About = () => {
           >
             {information.About}
           </motion.p>
-
-          <motion.div
-            variants={contentVariants}
-          >
-            <h2 className="text-lg font-semibold">Game Development</h2>
-            <p className="mb-4 text-base text-gray-600">
-              I started developing games on the ROBLOX platform and created my first successful game during quarantine in 2020 called AIMSTARS. I am proud to share that the game has amassed over 9.5 million plays and generated over $30,000 in revenue. AIMSTARS still has 15,000 monthly active users today!
-            </p>
-          </motion.div>
 
           <motion.div
             variants={contentVariants}
